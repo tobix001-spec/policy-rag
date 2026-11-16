@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import time
 from datetime import datetime, timezone
@@ -27,6 +28,47 @@ GATE_FILE = PROJECT_ROOT / "config" / "eval_gate.yaml"
 
 
 # ---------------------------------------------------------------- per-case scoring
+_COMPARE_EXPECTED = re.compile(r"^(?P<winner>.+?) \((?P<a>[^:]+): [^;]+; (?P<b>[^:]+): [^)]+\)\.?$")
+_OPPOSITE = {"lower": "higher", "higher": "lower", "shorter": "longer", "longer": "shorter",
+             "faster": "slower", "slower": "faster", "fewer": "more", "more": "fewer", "less": "more"}
+_COMPARATIVE = re.compile(r"\b(" + "|".join(_OPPOSITE) + r")\b", re.I)
+# sentence AND clause boundaries: the conclusion often follows ", so" / "; therefore" in one sentence
+_SENTENCE = re.compile(r"(?<=[.!?])\s+|,\s*(?:so|thus|therefore|which means)\b|;\s*|\b(?:therefore|thus),?\s", re.I)
+
+
+def comparison_winner_ok(answer: str, expected: str, question: str = "") -> bool:
+    """A comparison is only correct if the answer's conclusion picks the right winner.
+
+    Finds the last sentence containing a comparative ("X has the shorter ...", "Therefore Y is higher"),
+    takes the first product named in it as the subject, and flips the pick when the comparative is the
+    opposite of the one asked ("Term 30 is faster" answers "which is slower?" with the other product).
+    No conclusion, or calling the values equal, is wrong (golden values always differ).
+    """
+    m = _COMPARE_EXPECTED.match(expected)
+    if not m:
+        return True
+    names = (m["a"], m["b"])
+    asked_m = _COMPARATIVE.search(question)
+    asked = asked_m.group(1).lower() if asked_m else None
+    for sent in reversed(_SENTENCE.split(answer.strip())):
+        cm = _COMPARATIVE.search(sent)
+        low = sent.lower()
+        pos = {n: low.find(n.lower()) for n in names}
+        present = sorted((p, n) for n, p in pos.items() if p >= 0)
+        if not cm or not present:
+            continue
+        if re.search(r"\b(both|same|equal|identical)\b", low):
+            return False
+        subject = present[0][1]
+        word = cm.group(1).lower()
+        if asked and word == _OPPOSITE.get(asked):
+            pick = names[1] if subject == names[0] else names[0]
+        else:
+            pick = subject
+        return pick == m["winner"]
+    return False
+
+
 def chunk_is_relevant(hit: dict, case: GoldenCase) -> bool:
     return any(hit["doc_id"] in f.doc_ids and contains_any(hit["text"], f.match) for f in case.facts)
 
@@ -66,6 +108,8 @@ def score_case(case: GoldenCase, out: dict) -> dict:
                 prec.append(n_rel / k)
         row["context_precision"] = float(np.mean(prec)) if prec else 0.0
         row["correct"] = (not abstained) and contains_all_groups(answer, case.must_contain)
+        if case.type == "comparison":
+            row["correct"] = row["correct"] and comparison_winner_ok(answer, case.expected_answer, case.question)
         cited = [h for h in hits if h["chunk_id"] in row["cited_ids"]]
         row["citation_relevant"] = (not abstained) and any(chunk_is_relevant(h, case) for h in cited)
     else:

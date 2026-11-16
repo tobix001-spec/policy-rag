@@ -70,6 +70,29 @@ def test_invalid_output_goes_to_review(service, monkeypatch):
     assert service.review.counts().get("resolved") == 1
 
 
+def test_invalid_small_model_output_escalates_to_default_model(service, monkeypatch):
+    from langchain_core.messages import AIMessage
+
+    good = AIMessage(content=json.dumps({"reasoning": "r", "answer": "The late fee is $15.", "answerable": True,
+                                         "sources": [], "confidence": 0.9}))
+    calls = []
+
+    def fake_invoke(model, context, question):
+        calls.append(model)
+        if model == service.s.llm_small:
+            return AIMessage(content='{"reasoning": "rambling with no end'), model, False  # truncated JSON
+        return good, model, False
+
+    monkeypatch.setattr(service, "_invoke", fake_invoke)
+    service.s.max_json_repairs = 0
+    try:
+        out = service.answer("What is the late payment fee?", use_cache=False, force_route="simple")
+    finally:
+        service.s.max_json_repairs = 1
+    assert calls == [service.s.llm_small, service.s.llm_default]
+    assert out["route"]["escalated"] and out["format"]["valid"] and "invalid_output" not in out["review_reasons"]
+
+
 def test_llm_outage_degrades_gracefully(service, monkeypatch):
     def boom(*a, **k):
         raise ConnectionError("ollama down")
@@ -85,6 +108,38 @@ def test_cache_hit_on_repeat(service):
     second = service.answer(q)
     if first["status"] == "answered":
         assert second["cache"]["hit"] and second["usage"]["cost_usd_estimate"] == 0
+
+
+def test_comparison_grader_checks_the_winner():
+    from policyrag.evaluation.evaluate import comparison_winner_ok
+
+    q = "Compare the coinsurance rate of Bronze HMO and Silver PPO — which is lower?"
+    exp = "Silver PPO (Bronze HMO: 30%; Silver PPO: 10%)."
+    assert comparison_winner_ok("Silver PPO has the lower rate: 10% versus 30% for Bronze HMO.", exp, q)
+    assert not comparison_winner_ok("Bronze HMO has a lower rate: 30% for Bronze HMO versus 10% for Silver PPO.", exp, q)
+    assert not comparison_winner_ok("Both Bronze HMO and Silver PPO have the same rate of 30%.", exp, q)
+    # cases from the v1 audit: conclusion stated last, after both values
+    assert comparison_winner_ok("Pet Wellness has a 20 days grace period, while Exotic Pet has a 60 days grace "
+                                "period. Exotic Pet has the longer grace period.",
+                                "Exotic Pet (Pet Wellness: 20 days; Exotic Pet: 60 days).",
+                                "Which has the longer premium grace period: Pet Wellness or Exotic Pet?")
+    # opposite comparative: "Term 30 is faster" answers "which is slower?" with Universal Life
+    assert comparison_winner_ok("Term 30 has a faster claim decision time: 10 days for Term 30 versus 14 days.",
+                                "Universal Life (Term 30: 10 days; Universal Life: 14 days).",
+                                "Which has the slower claim decision time: Term 30 or Universal Life?")
+    # v2 audit: values first, conclusion in a ", so ..." clause of the same sentence
+    assert comparison_winner_ok("The water backup sublimit is $7,500 for Condo Shield and $25,000 for HomeBasic, "
+                                "so HomeBasic has the higher water backup sublimit.",
+                                "HomeBasic (Condo Shield: $7,500; HomeBasic: $25,000).",
+                                "Which has the higher water backup sublimit: Condo Shield or HomeBasic?")
+    assert not comparison_winner_ok("The sublimit is $7,500 for Condo Shield and $25,000 for HomeBasic, "
+                                    "so Condo Shield has the higher sublimit.",
+                                    "HomeBasic (Condo Shield: $7,500; HomeBasic: $25,000).",
+                                    "Which has the higher water backup sublimit: Condo Shield or HomeBasic?")
+    # values without a conclusion do not answer "which"
+    assert not comparison_winner_ok("Rideshare Auto has a 30-day grace period, while Basic Liability has a 20-day "
+                                    "grace period.", "Basic Liability (Rideshare Auto: 30 days; Basic Liability: 20 days).",
+                                    "Which has the shorter premium grace period: Rideshare Auto or Basic Liability?")
 
 
 def test_scoring_and_gate(built, service):

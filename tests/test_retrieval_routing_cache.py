@@ -17,6 +17,26 @@ def test_hybrid_finds_the_named_product(retriever):
     assert any(h.chunk["product"] == "Classic Car" for h in res.hits[:3])
 
 
+def test_entity_filter_ranks_sibling_products_last(retriever):
+    res = retriever.retrieve("How long do I have to appeal a denied Gold PPO claim?")
+    core = [h for h in res.hits if not h.expanded]
+    sibling = [h.chunk["product"] not in ("", "Gold PPO") for h in core]
+    assert core and not sibling[0]
+    # once a sibling appears, only siblings follow (own-product chunks always rank first)
+    assert sibling == sorted(sibling)
+
+
+def test_amendments_listed_first_in_context(retriever):
+    from policyrag.generation.prompts import format_context
+
+    base_doc = next(iter(retriever.amendments))
+    product = next(c["product"] for c in retriever.chunks if c["doc_id"] == base_doc)
+    res = retriever.retrieve(f"{product} policy coverage summary")
+    ctx = format_context(res.hits, retriever.superseded_by, amendments_first=True)
+    if any(h.chunk.get("supersedes") for h in res.hits):
+        assert ctx.lstrip().startswith("[amendment-")
+
+
 def test_amendment_expansion_pulls_in_superseding_doc(retriever):
     base_doc, amend_ids = next(iter(retriever.amendments.items()))
     product = next(c["product"] for c in retriever.chunks if c["doc_id"] == base_doc)

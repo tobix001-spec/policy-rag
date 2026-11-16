@@ -41,8 +41,8 @@
   "judge_tokens": null,
   "summary": {
     "n": 89,
-    "answer_accuracy": 0.8764,
-    "accuracy_answerable": 0.8571,
+    "answer_accuracy": 0.8427,
+    "accuracy_answerable": 0.8182,
     "abstention_accuracy": 1.0,
     "false_abstention_rate": 0.013,
     "hallucination_rate": 0.0,
@@ -53,7 +53,7 @@
       },
       "comparison": {
         "n": 12,
-        "accuracy": 0.5833
+        "accuracy": 0.3333
       },
       "internal": {
         "n": 5,
@@ -88,13 +88,13 @@
     },
     "review": {
       "flagged_rate": 0.2921,
-      "auto_answer_accuracy": 0.9524,
-      "error_recall": 0.7273
+      "auto_answer_accuracy": 0.9048,
+      "error_recall": 0.5714
     },
     "routing": {
       "complex": {
         "share": 0.2809,
-        "accuracy": 0.8,
+        "accuracy": 0.68,
         "latency_ms_p50": 3328.2,
         "cost_usd_mean": 0.0002
       },
@@ -2774,7 +2774,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true
     },
@@ -2866,7 +2866,7 @@
       "context_recall": 1.0,
       "mrr": 0.5,
       "context_precision": 0.5833333333333333,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true
     },
@@ -3002,7 +3002,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true
     },
@@ -3959,14 +3959,14 @@
       {
         "metric": "answer_accuracy",
         "check": ">= floor",
-        "value": 0.8764,
+        "value": 0.8427,
         "limit": 0.8,
         "pass": true
       },
       {
         "metric": "accuracy_answerable",
         "check": ">= floor",
-        "value": 0.8571,
+        "value": 0.8182,
         "limit": 0.8,
         "pass": true
       },
@@ -4008,7 +4008,7 @@
       {
         "metric": "review.auto_answer_accuracy",
         "check": ">= floor",
-        "value": 0.9524,
+        "value": 0.9048,
         "limit": 0.9,
         "pass": true
       },
@@ -4036,15 +4036,15 @@
       {
         "metric": "answer_accuracy",
         "check": "drop <= 0.03 vs baseline",
-        "value": 0.8764,
-        "limit": 0.8589,
+        "value": 0.8427,
+        "limit": 0.8311,
         "pass": true
       },
       {
         "metric": "accuracy_answerable",
         "check": "drop <= 0.03 vs baseline",
-        "value": 0.8571,
-        "limit": 0.841,
+        "value": 0.8182,
+        "limit": 0.8087,
         "pass": true
       },
       {
@@ -4085,15 +4085,15 @@
       {
         "metric": "review.auto_answer_accuracy",
         "check": "drop <= 0.03 vs baseline",
-        "value": 0.9524,
-        "limit": 0.9008,
+        "value": 0.9048,
+        "limit": 0.8623,
         "pass": true
       },
       {
         "metric": "review.error_recall",
         "check": "drop <= 0.1 vs baseline",
-        "value": 0.7273,
-        "limit": 0.45,
+        "value": 0.5714,
+        "limit": 0.34,
         "pass": true
       },
       {
@@ -4112,5 +4112,9 @@
       }
     ],
     "baseline": "baseline.json"
+  },
+  "rescored": {
+    "grader": "comparison winner check",
+    "rows_changed": 3
   }
 }

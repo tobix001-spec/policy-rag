@@ -180,6 +180,11 @@ where the registry says.
 - **Decomposition:** "Senior Pet vs Pet Wellness" becomes two searches. The first eval showed a single
   search found only one product (context recall 0.5 on comparisons).
 - **Amendment expansion:** if a retrieved chunk's document has an amendment, the amendment is added.
+- **Entity filter (v2):** if the question names exactly one product, chunks of *other* products rank
+  last. Every claims guide uses the same sentence template, so sibling chunks were distractors the 3b
+  model copied numbers from.
+- **Tried and removed (v3):** listing amendments first in the context. It measured worse (86.7% vs
+  100% on amendment questions), so the context keeps plain rerank order.
 
 ### Routing (cost)
 These are regex rules, not a classifier: they're transparent, cost nothing, and are easy to audit.
@@ -193,6 +198,11 @@ model ignored amendments in the first eval.
   the rest.
 - Retry once, then fall back to the other model. If both fail, the user still gets a response,
   routed to review (never a 500).
+- `reasoning` is the **first** JSON field, so the model writes its working before the answer. Ollama
+  generates fields in schema order. This fixed comparisons where the right values led to the wrong
+  winner.
+- **512-token output cap + escalation (v4):** v3's gate caught a 3b answer that looped for 16 minutes.
+  Output is now capped, and an invalid 3b output is retried once on the 7b model.
 
 ### Confidence and review
 - LLM self-confidence turned out to be **uncalibrated**: wrong answers claimed about 0.93.
@@ -235,8 +245,18 @@ uv run python -m policyrag.evaluation.evaluate --name candidate --gate
 **Ablations** turn off one component at a time to prove what each one is worth, and whether the gate
 catches its removal. Results land in `reports/ablations.md`.
 
-> Numbers: see `reports/eval_v0-baseline.md`, `reports/eval_v1.md` and `reports/ablations.md` once the
-> pipeline finishes. Quote only measured numbers.
+> Numbers: the README's Results section has the full v0 → v4 history (78.3% → 93.9% accuracy) and the
+> ablation deltas. Per-case detail is in `reports/eval_*.md`. Quote only measured numbers.
+
+**Lessons from the eval loop (good interview material):**
+1. **Grade the grader.** The comparison grader accepted answers that named the wrong winner. It was
+   found by reading cases by hand, fixed, tested, and every report was re-scored.
+2. **Intuition loses to measurement.** "Show the model the newest information first" sounded right and
+   made amendment answers worse.
+3. **The gate catches things accuracy can't.** A runaway generation barely moved accuracy or p95 but
+   doubled cost, and only the cost check failed.
+4. **Know your noise floor.** Identical configs differ by 1–2 cases per run, so ±1 point is not a
+   result.
 
 ---
 

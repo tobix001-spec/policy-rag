@@ -36,6 +36,7 @@ class RouteInfo(BaseModel):
     model: str
     reasons: list[str]
     fallback_used: bool
+    escalated: bool = False
 
 
 class Usage(BaseModel):

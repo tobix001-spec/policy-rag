@@ -44,6 +44,9 @@ class Settings(BaseSettings):
     llm_temperature: float = 0.0
     llm_num_ctx: int = 8192
     llm_timeout_s: float = 120.0
+    # Hard cap on generated tokens. Eval v3 caught a runaway generation (one 3b answer looped for 16 min
+    # and doubled the run's cost); normal answers use ~100-200 tokens.
+    llm_max_tokens: int = 512
     constrained_json: bool = True     # pass the JSON schema to Ollama's structured output
 
     # --- chunking ----------------------------------------------------------
@@ -61,6 +64,11 @@ class Settings(BaseSettings):
     final_k: int = 5
     expand_amendments: bool = True
     decompose_multi_entity: bool = True   # one sub-retrieval per product named in the question
+    decompose_per_product_k: int = 4      # chunks kept per product in a decomposed retrieval
+    entity_filter: bool = True            # single-product question: other products' chunks rank last
+    # Listing amendments first in the context was tried in v2 and measured WORSE on amendment questions
+    # (86.7% vs 100% in a 15-case probe), so context keeps plain rerank order. Kept as a flag for ablation.
+    amendments_first: bool = False
     grounding_check: bool = True          # numbers/products in the answer must appear in cited chunks
     context_routing: bool = True          # upgrade to the default model when an amendment is in play
 

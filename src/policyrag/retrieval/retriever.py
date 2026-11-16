@@ -147,12 +147,21 @@ class Retriever:
         hybrid = s.hybrid if hybrid is None else hybrid
         rerank = s.rerank if rerank is None else rerank
         products = self.products_in(query) if s.decompose_multi_entity else []
-        if len(products) < 2:
+        if len(products) == 1 and s.entity_filter:
+            # Entity filter: sibling products share sentence templates ("Appeals for X must be received
+            # within N days"), so their chunks are pure distractors; the small model was copying their
+            # numbers (eval v1). Rank chunks of *other* products last; product-less chunks are kept.
+            p = products[0]
+            hits, n, t = self._retrieve_one(query, flt, final_k * 3, hybrid, rerank)
+            hits.sort(key=lambda h: h.chunk.get("product", "") not in ("", p))  # stable
+            top = hits[:final_k]
+            t["entity_filter"] = 1.0
+        elif len(products) < 2:
             top, n, t = self._retrieve_one(query, flt, final_k, hybrid, rerank)
         else:
             # Query decomposition: a single embedding of "A vs B" tends to land on one of them.
             # Retrieve per product (other names removed), then interleave so each gets context.
-            per_k = max(3, final_k // len(products) + 1)
+            per_k = max(s.decompose_per_product_k, final_k // len(products) + 1)
             runs, t, n = [], {}, 0
             for p in products:
                 sub = query

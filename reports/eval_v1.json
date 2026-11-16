@@ -42,8 +42,8 @@
   ],
   "summary": {
     "n": 180,
-    "answer_accuracy": 0.8889,
-    "accuracy_answerable": 0.871,
+    "answer_accuracy": 0.8611,
+    "accuracy_answerable": 0.8387,
     "abstention_accuracy": 1.0,
     "false_abstention_rate": 0.0129,
     "hallucination_rate": 0.0,
@@ -54,7 +54,7 @@
       },
       "comparison": {
         "n": 25,
-        "accuracy": 0.8
+        "accuracy": 0.6
       },
       "internal": {
         "n": 10,
@@ -89,13 +89,13 @@
     },
     "review": {
       "flagged_rate": 0.2778,
-      "auto_answer_accuracy": 0.9308,
-      "error_recall": 0.55
+      "auto_answer_accuracy": 0.8923,
+      "error_recall": 0.44
     },
     "routing": {
       "complex": {
         "share": 0.2556,
-        "accuracy": 0.8913,
+        "accuracy": 0.7826,
         "latency_ms_p50": 3361.4,
         "cost_usd_mean": 0.0002
       },
@@ -7188,7 +7188,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true,
       "faithfulness": 0.6666666666666666,
@@ -7250,7 +7250,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true,
       "faithfulness": 1.0,
@@ -7495,7 +7495,7 @@
       "context_recall": 1.0,
       "mrr": 0.5,
       "context_precision": 0.5833333333333333,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true,
       "faithfulness": 0.0,
@@ -7713,7 +7713,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true,
       "faithfulness": 1.0,
@@ -7770,7 +7770,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true,
       "faithfulness": 1.0,
@@ -10021,19 +10021,19 @@
     }
   ],
   "gate": {
-    "passed": true,
+    "passed": false,
     "checks": [
       {
         "metric": "answer_accuracy",
         "check": ">= floor",
-        "value": 0.8889,
+        "value": 0.8611,
         "limit": 0.8,
         "pass": true
       },
       {
         "metric": "accuracy_answerable",
         "check": ">= floor",
-        "value": 0.871,
+        "value": 0.8387,
         "limit": 0.8,
         "pass": true
       },
@@ -10075,9 +10075,9 @@
       {
         "metric": "review.auto_answer_accuracy",
         "check": ">= floor",
-        "value": 0.9308,
+        "value": 0.8923,
         "limit": 0.9,
-        "pass": true
+        "pass": false
       },
       {
         "metric": "internal_leaks",
@@ -10103,15 +10103,15 @@
       {
         "metric": "answer_accuracy",
         "check": "drop <= 0.03 vs baseline",
-        "value": 0.8889,
-        "limit": 0.7756,
+        "value": 0.8611,
+        "limit": 0.7533,
         "pass": true
       },
       {
         "metric": "accuracy_answerable",
         "check": "drop <= 0.03 vs baseline",
-        "value": 0.871,
-        "limit": 0.7442,
+        "value": 0.8387,
+        "limit": 0.7184,
         "pass": true
       },
       {
@@ -10166,15 +10166,15 @@
       {
         "metric": "review.auto_answer_accuracy",
         "check": "drop <= 0.03 vs baseline",
-        "value": 0.9308,
-        "limit": 0.7673,
+        "value": 0.8923,
+        "limit": 0.7403,
         "pass": true
       },
       {
         "metric": "review.error_recall",
         "check": "drop <= 0.1 vs baseline",
-        "value": 0.55,
-        "limit": 0.0429,
+        "value": 0.44,
+        "limit": 0.0282,
         "pass": true
       },
       {
@@ -10193,5 +10193,9 @@
       }
     ],
     "baseline": "baseline.json"
+  },
+  "rescored": {
+    "grader": "comparison winner check",
+    "rows_changed": 5
   }
 }

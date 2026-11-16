@@ -190,7 +190,7 @@ class AnswerService:
             rt = router.Route("simple", self.s.llm_small, ("forced",))
         elif force_route == "complex":
             rt = router.Route("complex", self.s.llm_default, ("forced",))
-        context = format_context(ret.hits, self.retriever.superseded_by)
+        context = format_context(ret.hits, self.retriever.superseded_by, self.s.amendments_first)
         t0 = time.perf_counter()
         error = None
         try:
@@ -207,6 +207,25 @@ class AnswerService:
         parsed = self._parse(raw, model_used) if raw else ParseOutcome(None, False, False, error or "empty output")
         in_tok += parsed.extra_in
         out_tok += parsed.extra_out
+        escalated = False
+        if parsed.answer is None and raw and model_used == self.s.llm_small:
+            # Escalate once to the stronger model: the small model occasionally rambles until the token
+            # cap and emits truncated JSON (eval v3). Rare, so the extra cost is negligible.
+            try:
+                t1 = time.perf_counter()
+                msg2, model2, _ = self._invoke(self.s.llm_default, context, question)
+                timings["llm_escalation"] = (time.perf_counter() - t1) * 1000
+                i2, o2 = usage_from_message(msg2)
+                retry = self._parse(str(msg2.content), model2)
+                # tokens accumulate across both attempts; all are priced at the final model's rate
+                # below (slightly conservative: the small model's tokens are cheaper)
+                in_tok += i2 + retry.extra_in
+                out_tok += o2 + retry.extra_out
+                if retry.answer is not None:
+                    parsed, raw, model_used, escalated = retry, str(msg2.content), model2, True
+                    M.ERRORS.labels("escalated_invalid_output").inc()
+            except Exception:  # noqa: BLE001 - keep the original invalid-output path
+                M.ERRORS.labels("escalation_failed").inc()
         ans = parsed.answer
 
         # ---- citations + confidence
@@ -271,7 +290,8 @@ class AnswerService:
             "confidence": {"final": round(conf, 4), "retrieval": round(retrieval_conf, 4), "llm": round(llm_conf, 4),
                            "threshold": self.s.confidence_threshold},
             "status": status, "review_reasons": reasons, "review_id": None,
-            "route": {"name": rt.name, "model": model_used, "reasons": list(rt.reasons), "fallback_used": used_fallback},
+            "route": {"name": rt.name, "model": model_used, "reasons": list(rt.reasons), "fallback_used": used_fallback,
+                      "escalated": escalated},
             "usage": {"input_tokens": in_tok, "output_tokens": out_tok, "cost_usd_estimate": round(cost, 8)},
             "format": {"valid_first_try": parsed.valid_first_try, "repaired": parsed.repaired,
                        "coerced": list(parsed.coerced), "valid": ans is not None, "error": parsed.error},

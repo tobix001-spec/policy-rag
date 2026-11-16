@@ -7,15 +7,15 @@
 | metric | value |
 |---|---|
 | n | 180 |
-| answer_accuracy | 0.8056 |
-| accuracy_answerable | 0.7742 |
+| answer_accuracy | 0.7833 |
+| accuracy_answerable | 0.7484 |
 | abstention_accuracy | 1.0 |
 | false_abstention_rate | 0.0194 |
 | hallucination_rate | 0.0 |
 | by_type.amendment.n | 15 |
 | by_type.amendment.accuracy | 0.3333 |
 | by_type.comparison.n | 25 |
-| by_type.comparison.accuracy | 0.6 |
+| by_type.comparison.accuracy | 0.44 |
 | by_type.internal.n | 10 |
 | by_type.internal.accuracy | 1.0 |
 | by_type.simple.n | 105 |
@@ -35,10 +35,10 @@
 | citations.valid_rate | 0.9833 |
 | citations.relevant_rate | 0.8158 |
 | review.flagged_rate | 0.1778 |
-| review.auto_answer_accuracy | 0.7973 |
-| review.error_recall | 0.1429 |
+| review.auto_answer_accuracy | 0.7703 |
+| review.error_recall | 0.1282 |
 | routing.complex.share | 0.1389 |
-| routing.complex.accuracy | 0.6 |
+| routing.complex.accuracy | 0.44 |
 | routing.complex.latency_ms_p50 | 3299.3 |
 | routing.complex.cost_usd_mean | 0.0002 |
 | routing.simple.share | 0.8611 |
@@ -87,11 +87,15 @@
 | g119 | amendment | What is the deductible on Renters Essential? | All-perils deductible for Renters Essential: $3,000 (per the latest amendment). | $1,500 for all-perils loss under Renters Essential policy. | answered |
 | g121 | comparison | Which has the longer premium grace period: Pet Wellness or Exotic Pet? | Exotic Pet (Pet Wellness: 20 days; Exotic Pet: 60 days). | Pet Wellness has a 20 days grace period, while Exotic Pet has no specified grace period for premium payments. Therefore, Pet Wellness has the longer premium gra | answered |
 | g122 | comparison | Compare the collision deductible of Classic Car and Fleet Commercial — which is higher? | Fleet Commercial (Classic Car: $550; Fleet Commercial: $1,000). | The collision deductible for Classic Car is $750, while for Fleet Commercial it is $1,000. Therefore, the Fleet Commercial collision deductible is higher. | answered |
+| g123 | comparison | Which has the higher water backup sublimit: Condo Shield or HomeBasic? | HomeBasic (Condo Shield: $7,500; HomeBasic: $25,000). | Condo Shield has the higher water backup sublimit: $7,500 for Condo Shield versus $25,000 for HomeBasic. | answered |
 | g126 | comparison | Between the Trip Premier and Business Traveler plans, which one has a shorter baggage delay waiting period? | Trip Premier (Trip Premier: 12 hours; Business Traveler: 15 hours). | Trip Premier has a shorter baggage delay waiting period: 6 hours for Trip Premier versus 12 hours for Business Traveler. | answered |
+| g127 | comparison | Which has the lower medical evacuation limit: Trip Premier or Student Abroad? | Trip Premier (Trip Premier: $50,000; Student Abroad: $250,000). | Student Abroad has the lower medical evacuation limit: $250,000 for Student Abroad versus $50,000 for Trip Premier. | answered |
 | g128 | comparison | Between the Pet Accident Only and Pet Wellness plans, which one has a faster claim decision time? | Pet Wellness (Pet Accident Only: 21 days; Pet Wellness: 15 days). | I could not find this in the available documents. | needs_review |
 | g130 | comparison | Which has the longer appeal deadline: Pet Complete or Multi-Pet? | Multi-Pet (Pet Complete: 60 days; Multi-Pet: 120 days). | I could not find this in the available documents. | needs_review |
 | g132 | comparison | Which has the shorter premium grace period: Rideshare Auto or Basic Liability? | Basic Liability (Rideshare Auto: 30 days; Basic Liability: 20 days). | Rideshare Auto has the shorter premium grace period: 30 days for Rideshare Auto versus no grace period mentioned for Basic Liability. | answered |
 | g134 | comparison | Which has the higher annual benefit limit: Senior Pet or Pet Wellness? | Senior Pet (Senior Pet: $15,000; Pet Wellness: $5,000). | Pet Wellness has the higher annual benefit limit: $5,000 for Pet Wellness versus no annual benefit limit stated for Senior Pet. | needs_review |
+| g137 | comparison | Between the Annual Multi-Trip and Student Abroad plans, which one has a shorter baggage delay waiting period? | Student Abroad (Annual Multi-Trip: 24 hours; Student Abroad: 18 hours). | Annual Multi-Trip has a shorter baggage delay waiting period: 24 hours for Annual Multi-Trip versus 18 hours for Student Abroad. | answered |
+| g139 | comparison | Compare the coinsurance rate of Bronze HMO and Silver PPO — which is lower? | Silver PPO (Bronze HMO: 30%; Silver PPO: 10%). | Bronze HMO has the lower coinsurance rate: 30% for Bronze HMO versus 10% for Silver PPO. | answered |
 | g140 | comparison | Which has the longer claim filing deadline: Senior Pet or Pet Complete? | Senior Pet (Senior Pet: 45 days; Pet Complete: 30 days). | Pet Complete has a longer claim filing deadline: 30 days for Pet Complete versus 14 days for Senior Pet. | answered |
 | g141 | comparison | Between the HomeStandard and HomePlus policys, which one has a slower claim decision time? | HomePlus (HomeStandard: 10 days; HomePlus: 30 days). | Both HomeStandard and HomePlus have the same claim decision time of 10 days. | answered |
 | g145 | comparison | Which has the shorter claim filing deadline: Exotic Pet or Pet Accident Only? | Exotic Pet (Exotic Pet: 180 days; Pet Accident Only: 365 days). | Exotic Pet has the shorter claim filing deadline: 180 days for Exotic Pet versus 21 days for Pet Accident Only. | answered |

@@ -204,6 +204,7 @@ def get_chat_model(model: str, json_schema: dict | None = None) -> BaseChatModel
         base_url=s.ollama_base_url,
         temperature=s.llm_temperature,
         num_ctx=s.llm_num_ctx,
+        num_predict=s.llm_max_tokens,
         format=fmt,
         keep_alive="30m",
         client_kwargs={"timeout": s.llm_timeout_s},

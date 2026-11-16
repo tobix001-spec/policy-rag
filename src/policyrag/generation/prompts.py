@@ -13,13 +13,19 @@ ABSTAIN_TEXT = "I could not find this in the available documents."
 
 
 class LLMAnswer(BaseModel):
-    """What the model must return. Validated with Pydantic; failures count against format compliance."""
+    """What the model must return. Validated with Pydantic; failures count against format compliance.
 
+    Field order matters: constrained decoding emits fields in schema order, so `reasoning` comes first
+    and the model works out the values *before* committing to an answer. Eval v1 showed the 7b model
+    stating both values correctly and then naming the wrong winner when the answer came first.
+    """
+
+    reasoning: str = Field(description="Brief working: quote the relevant value for each product asked about; "
+                                       "for comparisons, state which number is larger.")
     answer: str = Field(description="Direct answer to the question, quoting numbers exactly as written in the context.")
     answerable: bool = Field(description="False if the context does not contain the answer.")
     sources: list[str] = Field(description="chunk_ids from the context that support the answer, e.g. 'policy-auto-classic-car#c2'.")
     confidence: float = Field(ge=0.0, le=1.0, description="Probability that the answer is correct and fully supported.")
-    reasoning: str = Field(description="One short sentence on how the context supports the answer.")
 
 
 ANSWER_JSON_SCHEMA = LLMAnswer.model_json_schema()
@@ -33,9 +39,11 @@ Rules:
 If the product asked about does not appear in the context, the question is not answerable.
 3. If the context does not contain the answer, set "answerable" to false, set "answer" to "{ABSTAIN_TEXT}", \
 and return an empty "sources" list.
-4. When an amendment conflicts with an older document, the amendment wins; state the current value and its effective date.
+4. When an amendment conflicts with an older document, the amendment wins; state the current value and its effective date. \
+An amendment saying a value "changes from X to Y" means Y is the CURRENT value and X is obsolete; never answer with X.
 5. Quote numbers, amounts and time periods exactly as written in the context.
-6. For comparisons, the answer MUST state the value for each product, then which is higher or lower.
+6. For comparisons, first write each product's value in "reasoning" and decide which number is larger, \
+then write an answer that states both values and ends with the conclusion.
 7. "sources" must list the chunk_ids (the text inside square brackets, without the brackets) of every excerpt you relied on.
 8. "confidence" is a decimal between 0 and 1 (for example 0.9), never a percentage.
 9. Respond with a single JSON object and nothing else.
@@ -43,9 +51,10 @@ and return an empty "sources" list.
 Example of a valid response:
 """ + (
     # literal braces doubled for ChatPromptTemplate (this part is deliberately NOT an f-string)
-    '{{"answer": "Gold PPO has the lower deductible: $500 for Gold PPO versus $1,500 for Silver PPO.", '
+    '{{"reasoning": "Gold PPO deductible is $500; Silver PPO deductible is $1,500. 500 is less than 1,500.", '
+    '"answer": "The deductible is $500 for Gold PPO and $1,500 for Silver PPO, so Gold PPO has the lower deductible.", '
     '"answerable": true, "sources": ["policy-health-gold-ppo#c1", "policy-health-silver-ppo#c1"], '
-    '"confidence": 0.9, "reasoning": "Both deductibles are stated in the cost sharing sections."}}'
+    '"confidence": 0.9}}'
 )
 
 HUMAN = """CONTEXT:
@@ -53,7 +62,7 @@ HUMAN = """CONTEXT:
 
 QUESTION: {question}
 
-Return JSON with keys: answer, answerable, sources, confidence, reasoning."""
+Return JSON with keys, in this order: reasoning, answer, answerable, sources, confidence."""
 
 ANSWER_PROMPT = ChatPromptTemplate.from_messages([("system", SYSTEM), ("human", HUMAN)])
 
@@ -64,7 +73,9 @@ REPAIR_PROMPT = ChatPromptTemplate.from_messages([
 ])
 
 
-def format_context(hits: list[Hit], superseded_by: dict[str, list[str]]) -> str:
+def format_context(hits: list[Hit], superseded_by: dict[str, list[str]], amendments_first: bool = False) -> str:
+    if amendments_first:  # stable: amendments lead, everything else keeps its rerank order
+        hits = sorted(hits, key=lambda h: not h.chunk.get("supersedes"))
     blocks = []
     for h in hits:
         c = h.chunk

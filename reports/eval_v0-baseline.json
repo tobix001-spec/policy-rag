@@ -46,8 +46,8 @@
   ],
   "summary": {
     "n": 180,
-    "answer_accuracy": 0.8056,
-    "accuracy_answerable": 0.7742,
+    "answer_accuracy": 0.7833,
+    "accuracy_answerable": 0.7484,
     "abstention_accuracy": 1.0,
     "false_abstention_rate": 0.0194,
     "hallucination_rate": 0.0,
@@ -58,7 +58,7 @@
       },
       "comparison": {
         "n": 25,
-        "accuracy": 0.6
+        "accuracy": 0.44
       },
       "internal": {
         "n": 10,
@@ -93,13 +93,13 @@
     },
     "review": {
       "flagged_rate": 0.1778,
-      "auto_answer_accuracy": 0.7973,
-      "error_recall": 0.1429
+      "auto_answer_accuracy": 0.7703,
+      "error_recall": 0.1282
     },
     "routing": {
       "complex": {
         "share": 0.1389,
-        "accuracy": 0.6,
+        "accuracy": 0.44,
         "latency_ms_p50": 3299.3,
         "cost_usd_mean": 0.0002
       },
@@ -6955,7 +6955,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true,
       "faithfulness": 0.6666666666666666,
@@ -7202,7 +7202,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true,
       "faithfulness": 1.0,
@@ -7757,7 +7757,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true,
       "faithfulness": 1.0,
@@ -7879,7 +7879,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 0.9166666666666666,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true,
       "faithfulness": 0.6666666666666666,
@@ -9741,5 +9741,9 @@
       "correct": true,
       "citation_valid": true
     }
-  ]
+  ],
+  "rescored": {
+    "grader": "comparison winner check",
+    "rows_changed": 4
+  }
 }

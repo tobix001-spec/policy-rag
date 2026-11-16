@@ -41,8 +41,8 @@
   "judge_tokens": null,
   "summary": {
     "n": 89,
-    "answer_accuracy": 0.8652,
-    "accuracy_answerable": 0.8442,
+    "answer_accuracy": 0.8315,
+    "accuracy_answerable": 0.8052,
     "abstention_accuracy": 1.0,
     "false_abstention_rate": 0.026,
     "hallucination_rate": 0.0,
@@ -53,7 +53,7 @@
       },
       "comparison": {
         "n": 12,
-        "accuracy": 0.5833
+        "accuracy": 0.3333
       },
       "internal": {
         "n": 5,
@@ -88,13 +88,13 @@
     },
     "review": {
       "flagged_rate": 0.2921,
-      "auto_answer_accuracy": 0.9206,
-      "error_recall": 0.5833
+      "auto_answer_accuracy": 0.873,
+      "error_recall": 0.4667
     },
     "routing": {
       "complex": {
         "share": 0.2809,
-        "accuracy": 0.8,
+        "accuracy": 0.68,
         "latency_ms_p50": 3237.4,
         "cost_usd_mean": 0.0002
       },
@@ -2816,7 +2816,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true
     },
@@ -2909,7 +2909,7 @@
       "context_recall": 1.0,
       "mrr": 0.5,
       "context_precision": 0.5833333333333333,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true
     },
@@ -3050,7 +3050,7 @@
       "context_recall": 1.0,
       "mrr": 1.0,
       "context_precision": 1.0,
-      "correct": true,
+      "correct": false,
       "citation_relevant": true,
       "citation_valid": true
     },
@@ -4019,19 +4019,19 @@
     }
   ],
   "gate": {
-    "passed": true,
+    "passed": false,
     "checks": [
       {
         "metric": "answer_accuracy",
         "check": ">= floor",
-        "value": 0.8652,
+        "value": 0.8315,
         "limit": 0.8,
         "pass": true
       },
       {
         "metric": "accuracy_answerable",
         "check": ">= floor",
-        "value": 0.8442,
+        "value": 0.8052,
         "limit": 0.8,
         "pass": true
       },
@@ -4073,9 +4073,9 @@
       {
         "metric": "review.auto_answer_accuracy",
         "check": ">= floor",
-        "value": 0.9206,
+        "value": 0.873,
         "limit": 0.9,
-        "pass": true
+        "pass": false
       },
       {
         "metric": "internal_leaks",
@@ -4101,16 +4101,16 @@
       {
         "metric": "answer_accuracy",
         "check": "drop <= 0.03 vs baseline",
-        "value": 0.8652,
-        "limit": 0.8589,
+        "value": 0.8315,
+        "limit": 0.8311,
         "pass": true
       },
       {
         "metric": "accuracy_answerable",
         "check": "drop <= 0.03 vs baseline",
-        "value": 0.8442,
-        "limit": 0.841,
-        "pass": true
+        "value": 0.8052,
+        "limit": 0.8087,
+        "pass": false
       },
       {
         "metric": "abstention_accuracy",
@@ -4150,15 +4150,15 @@
       {
         "metric": "review.auto_answer_accuracy",
         "check": "drop <= 0.03 vs baseline",
-        "value": 0.9206,
-        "limit": 0.9008,
+        "value": 0.873,
+        "limit": 0.8623,
         "pass": true
       },
       {
         "metric": "review.error_recall",
         "check": "drop <= 0.1 vs baseline",
-        "value": 0.5833,
-        "limit": 0.45,
+        "value": 0.4667,
+        "limit": 0.34,
         "pass": true
       },
       {
@@ -4177,5 +4177,9 @@
       }
     ],
     "baseline": "baseline.json"
+  },
+  "rescored": {
+    "grader": "comparison winner check",
+    "rows_changed": 3
   }
 }
