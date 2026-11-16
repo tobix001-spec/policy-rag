@@ -2,15 +2,18 @@
 #   API  -> http://localhost:8000/docs
 #   UI   -> http://localhost:8501
 # GPU for Ollama needs the NVIDIA Container Toolkit; remove the `deploy` block to run on CPU.
+# All ports bind to 127.0.0.1 only: on a server, reach them through an SSH tunnel (see deploy/aws/).
+# Nothing here has real authentication yet (X-Role is a client header), so never expose these publicly.
 name: policyrag
 
 services:
   ollama:
     image: ollama/ollama:latest
+    restart: unless-stopped
     volumes:
       - ollama:/root/.ollama
     ports:
-      - "11434:11434"
+      - "127.0.0.1:11434:11434"
     deploy:
       resources:
         reservations:
@@ -36,6 +39,7 @@ services:
 
   redis:
     image: redis:7-alpine
+    restart: unless-stopped
     command: ["redis-server", "--save", "", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-lru"]
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
@@ -47,6 +51,7 @@ services:
       context: ..
       dockerfile: docker/Dockerfile
     image: policyrag:latest
+    restart: unless-stopped
     depends_on:
       redis:
         condition: service_healthy
@@ -57,19 +62,24 @@ services:
       POLICYRAG_CACHE_BACKEND: redis
       POLICYRAG_REDIS_URL: redis://redis:6379/0
     ports:
-      - "8000:8000"
+      - "127.0.0.1:8000:8000"
     volumes:
       - policyrag-state:/app/logs
 
   ui:
+    # same image as api; the build section stops compose trying to pull policyrag:latest from Docker Hub
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     image: policyrag:latest
+    restart: unless-stopped
     depends_on:
       - api
     environment:
       POLICYRAG_API_URL: http://api:8000
     command: ["streamlit", "run", "ui/app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
     ports:
-      - "8501:8501"
+      - "127.0.0.1:8501:8501"
 
 volumes:
   ollama:
