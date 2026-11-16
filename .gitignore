@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+logs/
+data/index/
+data/processed/
+data/*.sqlite
+reports/_eval_state/
+.env
+.vscode/
+reports/eval_smoke.*

@@ -1,0 +1,11 @@
+.venv
+**/__pycache__
+.pytest_cache
+logs
+reports
+data/index
+data/processed
+data/*.sqlite
+.vscode
+.git
+notebooks

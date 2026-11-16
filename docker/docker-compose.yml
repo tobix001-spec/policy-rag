@@ -1,0 +1,76 @@
+# docker compose -f docker/docker-compose.yml up --build
+#   API  -> http://localhost:8000/docs
+#   UI   -> http://localhost:8501
+# GPU for Ollama needs the NVIDIA Container Toolkit; remove the `deploy` block to run on CPU.
+name: policyrag
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "11434:11434"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  ollama-pull:
+    image: ollama/ollama:latest
+    depends_on:
+      ollama:
+        condition: service_healthy
+    environment:
+      OLLAMA_HOST: http://ollama:11434
+    entrypoint: ["/bin/sh", "-c", "ollama pull qwen2.5:7b && ollama pull qwen2.5:3b"]
+    restart: "no"
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--maxmemory", "256mb", "--maxmemory-policy", "allkeys-lru"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: policyrag:latest
+    depends_on:
+      redis:
+        condition: service_healthy
+      ollama-pull:
+        condition: service_completed_successfully
+    environment:
+      POLICYRAG_OLLAMA_BASE_URL: http://ollama:11434
+      POLICYRAG_CACHE_BACKEND: redis
+      POLICYRAG_REDIS_URL: redis://redis:6379/0
+    ports:
+      - "8000:8000"
+    volumes:
+      - policyrag-state:/app/logs
+
+  ui:
+    image: policyrag:latest
+    depends_on:
+      - api
+    environment:
+      POLICYRAG_API_URL: http://api:8000
+    command: ["streamlit", "run", "ui/app.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+    ports:
+      - "8501:8501"
+
+volumes:
+  ollama:
+  policyrag-state:

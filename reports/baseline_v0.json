@@ -1,0 +1,80 @@
+{
+  "from": "eval_v0-baseline.json",
+  "summary": {
+    "n": 180,
+    "answer_accuracy": 0.8056,
+    "accuracy_answerable": 0.7742,
+    "abstention_accuracy": 1.0,
+    "false_abstention_rate": 0.0194,
+    "hallucination_rate": 0.0,
+    "by_type": {
+      "amendment": {
+        "n": 15,
+        "accuracy": 0.3333
+      },
+      "comparison": {
+        "n": 25,
+        "accuracy": 0.6
+      },
+      "internal": {
+        "n": 10,
+        "accuracy": 1.0
+      },
+      "simple": {
+        "n": 105,
+        "accuracy": 0.8571
+      },
+      "unanswerable": {
+        "n": 25,
+        "accuracy": 1.0
+      }
+    },
+    "retrieval": {
+      "hit_rate": 0.9935,
+      "context_recall": 0.9742,
+      "mrr": 0.9432,
+      "context_precision": 0.9369
+    },
+    "faithfulness": 0.7989,
+    "answer_relevancy": 0.8421,
+    "format": {
+      "valid_rate": 1.0,
+      "valid_first_try_rate": 1.0,
+      "coerced_rate": 0.0,
+      "repaired_rate": 0.0
+    },
+    "citations": {
+      "valid_rate": 0.9833,
+      "relevant_rate": 0.8158
+    },
+    "review": {
+      "flagged_rate": 0.1778,
+      "auto_answer_accuracy": 0.7973,
+      "error_recall": 0.1429
+    },
+    "routing": {
+      "complex": {
+        "share": 0.1389,
+        "accuracy": 0.6,
+        "latency_ms_p50": 3299.3,
+        "cost_usd_mean": 0.0002
+      },
+      "simple": {
+        "share": 0.8611,
+        "accuracy": 0.8387,
+        "latency_ms_p50": 2691.4,
+        "cost_usd_mean": 0.0001
+      }
+    },
+    "fallback_rate": 0.0,
+    "latency_ms_p50": 2721.8,
+    "latency_ms_p95": 3379.5,
+    "llm_ms_p50": 2617.4,
+    "retrieval_ms_p50": 90.8,
+    "tokens_in_mean": 1117.6,
+    "tokens_out_mean": 88.8,
+    "cost_per_query_usd": 0.0001579,
+    "cost_per_1k_queries_usd": 0.1579,
+    "internal_leaks": 0
+  }
+}

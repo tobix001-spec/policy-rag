@@ -1,0 +1,39 @@
+# Regression gate for `python -m policyrag.evaluation.evaluate --gate`.
+# Metric names are dotted paths into the report summary.
+#
+# floors/ceilings: absolute product requirements (fail regardless of history)
+# max_drop:        allowed absolute drop vs reports/baseline.json (catches regressions
+#                  that still clear the floor)
+# max_increase_ratio: allowed growth vs baseline for latency/cost
+
+floors:
+  answer_accuracy: 0.80
+  accuracy_answerable: 0.80
+  abstention_accuracy: 0.80
+  retrieval.hit_rate: 0.90
+  retrieval.context_recall: 0.85
+  format.valid_rate: 0.98
+  citations.valid_rate: 0.90
+  review.auto_answer_accuracy: 0.90
+
+ceilings:
+  internal_leaks: 0
+  hallucination_rate: 0.20
+  latency_ms_p95: 15000
+
+max_drop:
+  answer_accuracy: 0.03
+  accuracy_answerable: 0.03
+  abstention_accuracy: 0.05
+  retrieval.hit_rate: 0.03
+  retrieval.context_recall: 0.03
+  retrieval.mrr: 0.05
+  faithfulness: 0.05
+  answer_relevancy: 0.05
+  format.valid_first_try_rate: 0.05
+  review.auto_answer_accuracy: 0.03
+  review.error_recall: 0.10
+
+max_increase_ratio:
+  latency_ms_p95: 1.30
+  cost_per_query_usd: 1.25

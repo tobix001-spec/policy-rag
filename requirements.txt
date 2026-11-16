@@ -1,0 +1,101 @@
+# Generated from uv.lock (uv export). torch is installed separately in the Dockerfile (CPU wheel);
+# locally, uv installs the cu128 build. Regenerate: uv export --no-hashes --no-dev --extra redis --extra ui --no-emit-project
+altair==6.3.0
+annotated-doc==0.0.6
+annotated-types==0.8.0
+anyio==4.16.0
+attrs==26.1.0
+certifi==2026.10.23
+charset-normalizer==3.5.2
+click==8.5.1
+cloudpickle==3.1.2
+colorama==0.4.6 ; sys_platform == 'win32'
+distro==1.9.0
+faiss-cpu==1.16.0
+fastapi==0.163.1
+filelock==4.2.10
+fsspec==2026.9.0
+h11==0.16.0
+hf-xet==1.8.0 ; platform_machine == 'AMD64' or platform_machine == 'ARM64' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'arm64' or platform_machine == 'x86_64'
+httpcore==1.0.9
+httpcore2==2.16.2 ; sys_platform != 'emscripten'
+httptools==0.9.0
+httpx==0.28.1
+httpx2==2.16.2
+httpx2-jsfetch==1.0 ; sys_platform == 'emscripten'
+huggingface-hub==2.4.0
+idna==3.20
+itsdangerous==2.2.0
+jinja2==3.1.6
+joblib==1.6.0
+jsonpatch==1.47
+jsonpointer==3.12
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+langchain-core==1.8.1
+langchain-ollama==1.1.0
+langchain-protocol==0.0.21
+langchain-text-splitters==1.1.3
+langsmith==0.14.17
+markdown-it-py==4.3.0
+markupsafe==3.0.4
+mdurl==0.1.2
+mpmath==1.3.0
+narwhals==2.28.0
+networkx==3.7
+numpy==2.5.5
+ollama==0.6.3
+opentelemetry-api==1.45.2
+orjson==3.13.0 ; platform_python_implementation != 'PyPy'
+packaging==26.3
+pandas==3.1.1
+pillow==13.0.0
+prometheus-client==0.26.0
+protobuf==7.36.2
+pyarrow==26.0.1
+pydantic==2.14.3
+pydantic-core==2.50.4
+pydantic-settings==2.16.3
+pydeck==0.9.3
+pygments==2.21.0
+python-dateutil==4.0.0
+python-dotenv==1.2.4
+python-multipart==0.0.34
+pyyaml==6.0.3
+rank-bm25==0.2.2
+redis==8.1.0
+referencing==0.37.0
+regex==2026.11.15
+requests==2.34.2
+requests-toolbelt==1.0.0
+rich==14.3.4
+rpds-py==2026.9.1
+safetensors==0.8.0
+scikit-learn==1.9.1
+scipy==1.18.1
+sentence-transformers==6.3.0
+setuptools==81.0.0
+shellingham==1.5.4
+sniffio==1.3.1
+starlette==1.10.0
+streamlit==1.67.0
+sympy==1.14.0
+tenacity==9.2.1
+threadpoolctl==3.8.0
+tokenizers==0.23.3
+tqdm==4.70.1
+transformers==5.23.0
+truststore==0.10.5 ; sys_platform != 'emscripten'
+typer==0.29.1
+typing-extensions==4.16.0
+typing-inspection==0.4.5
+tzdata==2026.6
+urllib3==2.8.0
+uuid-utils==0.19.0
+uvicorn==0.54.0
+uvloop==0.23.0 ; platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'
+watchdog==7.1.0 ; sys_platform != 'darwin'
+watchfiles==1.3.0
+websockets==17.4
+xxhash==4.1.0
+zstandard==0.25.0

@@ -1,0 +1,6421 @@
+[
+  {
+    "id": "g001",
+    "type": "simple",
+    "question": "What is the grace period for late premiums on Final Expense?",
+    "expected_answer": "Premium grace period for Final Expense: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.final-expense.grace_period",
+        "doc_ids": [
+          "policy-life-final-expense"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-life-final-expense"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g002",
+    "type": "simple",
+    "question": "How long do I have to appeal a denied Gold PPO claim?",
+    "expected_answer": "Appeal deadline for Gold PPO: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.gold-ppo.appeal_window",
+        "doc_ids": [
+          "claims-health-gold-ppo"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-health-gold-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g003",
+    "type": "simple",
+    "question": "How long must my bag be delayed before Student Abroad pays?",
+    "expected_answer": "Baggage delay waiting period for Student Abroad: 18 hours.",
+    "must_contain": [
+      [
+        "18 hours",
+        "18-hour",
+        "18 hrs"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.student-abroad.baggage_delay",
+        "doc_ids": [
+          "policy-travel-student-abroad",
+          "brochure-travel-student-abroad"
+        ],
+        "match": [
+          "18 hours",
+          "18-hour",
+          "18 hrs"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-travel-student-abroad",
+      "policy-travel-student-abroad"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g004",
+    "type": "simple",
+    "question": "How long does Velmora keep claim records?",
+    "expected_answer": "Retention years for Velmora: 7 years.",
+    "must_contain": [
+      [
+        "7 years",
+        "seven years"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.retention_years",
+        "doc_ids": [
+          "support-records"
+        ],
+        "match": [
+          "7 years",
+          "seven years"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-records"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g005",
+    "type": "simple",
+    "question": "Within how many days will Velmora Assurance decide a complete Annual Multi-Trip claim?",
+    "expected_answer": "Claim decision time for Annual Multi-Trip: 15 days.",
+    "must_contain": [
+      [
+        "15 days",
+        "15-day",
+        "15 calendar days",
+        "15 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.annual-multi-trip.decision_sla",
+        "doc_ids": [
+          "claims-travel-annual-multi-trip"
+        ],
+        "match": [
+          "15 days",
+          "15-day",
+          "15 calendar days",
+          "15 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-travel-annual-multi-trip"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g006",
+    "type": "simple",
+    "question": "How many days of grace period does Standard Auto allow for missed payments?",
+    "expected_answer": "Premium grace period for Standard Auto: 15 days.",
+    "must_contain": [
+      [
+        "15 days",
+        "15-day",
+        "15 calendar days",
+        "15 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.standard-auto.grace_period",
+        "doc_ids": [
+          "policy-auto-standard-auto"
+        ],
+        "match": [
+          "15 days",
+          "15-day",
+          "15 calendar days",
+          "15 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-auto-standard-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g007",
+    "type": "simple",
+    "question": "What is the cancellation notice period for Silver PPO?",
+    "expected_answer": "Cancellation notice period for Silver PPO: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-ppo.cancel_notice",
+        "doc_ids": [
+          "policy-health-silver-ppo"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-silver-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g008",
+    "type": "simple",
+    "question": "How much do I pay for an emergency room visit on Bronze HMO?",
+    "expected_answer": "Emergency room copay for Bronze HMO: $300.",
+    "must_contain": [
+      [
+        "$300",
+        "300 dollars",
+        "usd 300"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.bronze-hmo.er_copay",
+        "doc_ids": [
+          "policy-health-bronze-hmo",
+          "brochure-health-bronze-hmo"
+        ],
+        "match": [
+          "$300",
+          "300 dollars",
+          "usd 300"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-health-bronze-hmo",
+      "policy-health-bronze-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g009",
+    "type": "simple",
+    "question": "How soon after my deposit must I add cancel-for-any-reason to Student Abroad?",
+    "expected_answer": "Cancel-for-any-reason purchase window for Student Abroad: 14 days.",
+    "must_contain": [
+      [
+        "14 days",
+        "14-day",
+        "14 calendar days",
+        "14 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.student-abroad.cfar_window",
+        "doc_ids": [
+          "policy-travel-student-abroad"
+        ],
+        "match": [
+          "14 days",
+          "14-day",
+          "14 calendar days",
+          "14 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-travel-student-abroad"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g010",
+    "type": "simple",
+    "question": "How long does Velmora take to respond to a formal complaint?",
+    "expected_answer": "Complaint days for Velmora: 10 business days.",
+    "must_contain": [
+      [
+        "10 business days",
+        "ten business days"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.complaint_days",
+        "doc_ids": [
+          "support-complaints"
+        ],
+        "match": [
+          "10 business days",
+          "ten business days"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-complaints"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g011",
+    "type": "simple",
+    "question": "What is the maximum file size for uploading claim documents on the web portal?",
+    "expected_answer": "Upload web mb for Velmora: 25 MB.",
+    "must_contain": [
+      [
+        "25 mb",
+        "25mb"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.upload_web_mb",
+        "doc_ids": [
+          "support-upload-web"
+        ],
+        "match": [
+          "25 mb",
+          "25mb"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-upload-web"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g012",
+    "type": "simple",
+    "question": "Within how many days will Velmora Assurance decide a complete Standard Auto claim?",
+    "expected_answer": "Claim decision time for Standard Auto: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.standard-auto.decision_sla",
+        "doc_ids": [
+          "claims-auto-standard-auto"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-auto-standard-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g013",
+    "type": "simple",
+    "question": "What is the appeal deadline for Renters Essential?",
+    "expected_answer": "Appeal deadline for Renters Essential: 90 days.",
+    "must_contain": [
+      [
+        "90 days",
+        "90-day",
+        "90 calendar days",
+        "90 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.renters-essential.appeal_window",
+        "doc_ids": [
+          "claims-home-renters-essential"
+        ],
+        "match": [
+          "90 days",
+          "90-day",
+          "90 calendar days",
+          "90 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-renters-essential"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g014",
+    "type": "simple",
+    "question": "How long is a two-factor verification code valid?",
+    "expected_answer": "Otp minutes for Velmora: 10 minutes.",
+    "must_contain": [
+      [
+        "10 minutes",
+        "10 min"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.otp_minutes",
+        "doc_ids": [
+          "support-two-factor"
+        ],
+        "match": [
+          "10 minutes",
+          "10 min"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-two-factor"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g015",
+    "type": "simple",
+    "question": "What is the appeal deadline for Catastrophic EPO?",
+    "expected_answer": "Appeal deadline for Catastrophic EPO: 60 days.",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.catastrophic-epo.appeal_window",
+        "doc_ids": [
+          "claims-health-catastrophic-epo"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-health-catastrophic-epo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g016",
+    "type": "simple",
+    "question": "What is the claim decision timeframe for HomeBasic?",
+    "expected_answer": "Claim decision time for HomeBasic: 21 days.",
+    "must_contain": [
+      [
+        "21 days",
+        "21-day",
+        "21 calendar days",
+        "21 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homebasic.decision_sla",
+        "doc_ids": [
+          "claims-home-homebasic"
+        ],
+        "match": [
+          "21 days",
+          "21-day",
+          "21 calendar days",
+          "21 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-homebasic"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g017",
+    "type": "simple",
+    "question": "How many files can I attach to one claim on the web portal?",
+    "expected_answer": "Upload web files for Velmora: 20 files.",
+    "must_contain": [
+      [
+        "20"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.upload_web_files",
+        "doc_ids": [
+          "support-upload-web"
+        ],
+        "match": [
+          "20"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-upload-web"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g018",
+    "type": "simple",
+    "question": "What deductible do I have to meet on Catastrophic EPO before coverage kicks in?",
+    "expected_answer": "Annual deductible for Catastrophic EPO: $1,500.",
+    "must_contain": [
+      [
+        "$1500",
+        "1500 dollars",
+        "usd 1500"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.catastrophic-epo.deductible",
+        "doc_ids": [
+          "policy-health-catastrophic-epo",
+          "brochure-health-catastrophic-epo"
+        ],
+        "match": [
+          "$1500",
+          "1500 dollars",
+          "usd 1500"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-health-catastrophic-epo",
+      "policy-health-catastrophic-epo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g019",
+    "type": "simple",
+    "question": "How long do I have to appeal a denied HomeBasic claim?",
+    "expected_answer": "Appeal deadline for HomeBasic: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homebasic.appeal_window",
+        "doc_ids": [
+          "claims-home-homebasic"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-homebasic"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g020",
+    "type": "simple",
+    "question": "How many days' notice will I get before my Trip Lite coverage is cancelled?",
+    "expected_answer": "Cancellation notice period for Trip Lite: 60 days.",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.trip-lite.cancel_notice",
+        "doc_ids": [
+          "policy-travel-trip-lite"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-travel-trip-lite"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g021",
+    "type": "simple",
+    "question": "What is the claim decision timeframe for Exotic Pet?",
+    "expected_answer": "Claim decision time for Exotic Pet: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.exotic-pet.decision_sla",
+        "doc_ids": [
+          "claims-pet-exotic-pet"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-pet-exotic-pet"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g022",
+    "type": "simple",
+    "question": "What is the claim decision timeframe for Silver HMO?",
+    "expected_answer": "Claim decision time for Silver HMO: 10 days.",
+    "must_contain": [
+      [
+        "10 days",
+        "10-day",
+        "10 calendar days",
+        "10 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-hmo.decision_sla",
+        "doc_ids": [
+          "claims-health-silver-hmo"
+        ],
+        "match": [
+          "10 days",
+          "10-day",
+          "10 calendar days",
+          "10 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-health-silver-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g023",
+    "type": "simple",
+    "question": "How much emergency evacuation coverage does Trip Premier include?",
+    "expected_answer": "Medical evacuation limit for Trip Premier: $50,000.",
+    "must_contain": [
+      [
+        "$50000",
+        "50000 dollars",
+        "usd 50000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.trip-premier.evac_limit",
+        "doc_ids": [
+          "policy-travel-trip-premier"
+        ],
+        "match": [
+          "$50000",
+          "50000 dollars",
+          "usd 50000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-travel-trip-premier"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g024",
+    "type": "simple",
+    "question": "Within how many days must a Renters Essential claim be submitted?",
+    "expected_answer": "Claim filing deadline for Renters Essential: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.renters-essential.claim_window",
+        "doc_ids": [
+          "claims-home-renters-essential"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-renters-essential"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g025",
+    "type": "simple",
+    "question": "How long until direct deposit for claim payments takes effect?",
+    "expected_answer": "Dd days for Velmora: 5 business days.",
+    "must_contain": [
+      [
+        "5 business days",
+        "five business days"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.dd_days",
+        "doc_ids": [
+          "support-direct-deposit"
+        ],
+        "match": [
+          "5 business days",
+          "five business days"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-direct-deposit"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g026",
+    "type": "simple",
+    "question": "How long do I have to appeal a denied Pet Accident Only claim?",
+    "expected_answer": "Appeal deadline for Pet Accident Only: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-accident-only.appeal_window",
+        "doc_ids": [
+          "claims-pet-pet-accident-only"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-pet-pet-accident-only"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g027",
+    "type": "simple",
+    "question": "How long does a replacement physical ID card take to arrive?",
+    "expected_answer": "Id card mail for Velmora: 7 to 10 business days.",
+    "must_contain": [
+      [
+        "7 to 10 business days",
+        "7-10 business days",
+        "7\u201310 business days"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.id_card_mail",
+        "doc_ids": [
+          "support-id-cards"
+        ],
+        "match": [
+          "7 to 10 business days",
+          "7-10 business days",
+          "7\u201310 business days"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-id-cards"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g028",
+    "type": "simple",
+    "question": "What is the maximum enrollment age for Pet Complete?",
+    "expected_answer": "Maximum enrollment age for Pet Complete: 10 years.",
+    "must_contain": [
+      [
+        "10 years",
+        "10-year",
+        "age 10",
+        "10 yrs"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-complete.max_enroll_age",
+        "doc_ids": [
+          "policy-pet-pet-complete"
+        ],
+        "match": [
+          "10 years",
+          "10-year",
+          "age 10",
+          "10 yrs"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-pet-pet-complete"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g029",
+    "type": "simple",
+    "question": "What discount do I get for enrolling in autopay?",
+    "expected_answer": "Autopay discount for Velmora: 3%.",
+    "must_contain": [
+      [
+        "3%",
+        "3 percent"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.autopay_discount",
+        "doc_ids": [
+          "support-payments"
+        ],
+        "match": [
+          "3%",
+          "3 percent"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-payments"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g030",
+    "type": "simple",
+    "question": "How many days of grace period does Classic Car allow for missed payments?",
+    "expected_answer": "Premium grace period for Classic Car: 10 days.",
+    "must_contain": [
+      [
+        "10 days",
+        "10-day",
+        "10 calendar days",
+        "10 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.classic-car.grace_period",
+        "doc_ids": [
+          "policy-auto-classic-car"
+        ],
+        "match": [
+          "10 days",
+          "10-day",
+          "10 calendar days",
+          "10 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-auto-classic-car"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g031",
+    "type": "simple",
+    "question": "If my HomeStandard claim is denied, by when must I appeal?",
+    "expected_answer": "Appeal deadline for HomeStandard: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homestandard.appeal_window",
+        "doc_ids": [
+          "claims-home-homestandard"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-homestandard"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g032",
+    "type": "simple",
+    "question": "How many days of grace period does Platinum PPO allow for missed payments?",
+    "expected_answer": "Premium grace period for Platinum PPO: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.platinum-ppo.grace_period",
+        "doc_ids": [
+          "policy-health-platinum-ppo"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-platinum-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g033",
+    "type": "simple",
+    "question": "How many days' notice will I get before my Final Expense coverage is cancelled?",
+    "expected_answer": "Cancellation notice period for Final Expense: 14 days.",
+    "must_contain": [
+      [
+        "14 days",
+        "14-day",
+        "14 calendar days",
+        "14 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.final-expense.cancel_notice",
+        "doc_ids": [
+          "policy-life-final-expense"
+        ],
+        "match": [
+          "14 days",
+          "14-day",
+          "14 calendar days",
+          "14 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-life-final-expense"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g034",
+    "type": "simple",
+    "question": "How much does Fleet Commercial pay per day for a rental car?",
+    "expected_answer": "Rental car reimbursement for Fleet Commercial: $35.",
+    "must_contain": [
+      [
+        "$35",
+        "35 dollars",
+        "usd 35"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.fleet-commercial.rental_per_day",
+        "doc_ids": [
+          "policy-auto-fleet-commercial",
+          "brochure-auto-fleet-commercial"
+        ],
+        "match": [
+          "$35",
+          "35 dollars",
+          "usd 35"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-auto-fleet-commercial",
+      "policy-auto-fleet-commercial"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g035",
+    "type": "simple",
+    "question": "How much emergency evacuation coverage does Annual Multi-Trip include?",
+    "expected_answer": "Medical evacuation limit for Annual Multi-Trip: $1,000,000.",
+    "must_contain": [
+      [
+        "$1000000",
+        "1000000 dollars",
+        "usd 1000000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.annual-multi-trip.evac_limit",
+        "doc_ids": [
+          "policy-travel-annual-multi-trip"
+        ],
+        "match": [
+          "$1000000",
+          "1000000 dollars",
+          "usd 1000000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-travel-annual-multi-trip"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g036",
+    "type": "simple",
+    "question": "What is the claim filing deadline for the Rideshare Auto policy?",
+    "expected_answer": "Claim filing deadline for Rideshare Auto: 60 days.",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.rideshare-auto.claim_window",
+        "doc_ids": [
+          "claims-auto-rideshare-auto"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-auto-rideshare-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g037",
+    "type": "simple",
+    "question": "What deductible do I have to meet on Silver HMO before coverage kicks in?",
+    "expected_answer": "Annual deductible for Silver HMO: $250.",
+    "must_contain": [
+      [
+        "$250",
+        "250 dollars",
+        "usd 250"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-hmo.deductible",
+        "doc_ids": [
+          "policy-health-silver-hmo",
+          "brochure-health-silver-hmo"
+        ],
+        "match": [
+          "$250",
+          "250 dollars",
+          "usd 250"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-health-silver-hmo",
+      "policy-health-silver-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g038",
+    "type": "simple",
+    "question": "How long before illnesses are covered on Pet Complete?",
+    "expected_answer": "Illness waiting period for Pet Complete: 7 days.",
+    "must_contain": [
+      [
+        "7 days",
+        "7-day",
+        "7 calendar days",
+        "7 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-complete.illness_wait",
+        "doc_ids": [
+          "policy-pet-pet-complete",
+          "brochure-pet-pet-complete"
+        ],
+        "match": [
+          "7 days",
+          "7-day",
+          "7 calendar days",
+          "7 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-pet-pet-complete",
+      "policy-pet-pet-complete"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g039",
+    "type": "simple",
+    "question": "How long do I have to appeal a denied Pet Complete claim?",
+    "expected_answer": "Appeal deadline for Pet Complete: 60 days.",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-complete.appeal_window",
+        "doc_ids": [
+          "claims-pet-pet-complete"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-pet-pet-complete"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g040",
+    "type": "simple",
+    "question": "If my Silver PPO claim is denied, by when must I appeal?",
+    "expected_answer": "Appeal deadline for Silver PPO: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-ppo.appeal_window",
+        "doc_ids": [
+          "claims-health-silver-ppo"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-health-silver-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g041",
+    "type": "simple",
+    "question": "How many days of grace period does Basic Liability allow for missed payments?",
+    "expected_answer": "Premium grace period for Basic Liability: 20 days.",
+    "must_contain": [
+      [
+        "20 days",
+        "20-day",
+        "20 calendar days",
+        "20 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.basic-liability.grace_period",
+        "doc_ids": [
+          "policy-auto-basic-liability"
+        ],
+        "match": [
+          "20 days",
+          "20-day",
+          "20 calendar days",
+          "20 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-auto-basic-liability"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g042",
+    "type": "simple",
+    "question": "If my jewelry is stolen, how much will HomePlus pay?",
+    "expected_answer": "Jewelry theft limit for HomePlus: $1,500.",
+    "must_contain": [
+      [
+        "$1500",
+        "1500 dollars",
+        "usd 1500"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homeplus.jewelry_limit",
+        "doc_ids": [
+          "policy-home-homeplus",
+          "brochure-home-homeplus"
+        ],
+        "match": [
+          "$1500",
+          "1500 dollars",
+          "usd 1500"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-home-homeplus",
+      "policy-home-homeplus"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g043",
+    "type": "simple",
+    "question": "After meeting the deductible, what percentage do I pay on Silver HMO?",
+    "expected_answer": "Coinsurance rate for Silver HMO: 20%.",
+    "must_contain": [
+      [
+        "20%",
+        "20 percent",
+        "20 %"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-hmo.coinsurance",
+        "doc_ids": [
+          "policy-health-silver-hmo"
+        ],
+        "match": [
+          "20%",
+          "20 percent",
+          "20 %"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-silver-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g044",
+    "type": "simple",
+    "question": "What is the late payment fee?",
+    "expected_answer": "Late fee for Velmora: $15.",
+    "must_contain": [
+      [
+        "$15",
+        "15 dollars"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.late_fee",
+        "doc_ids": [
+          "support-payments"
+        ],
+        "match": [
+          "$15",
+          "15 dollars"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-payments"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g045",
+    "type": "simple",
+    "question": "How long do I have to file a claim under Pet Wellness?",
+    "expected_answer": "Claim filing deadline for Pet Wellness: 90 days.",
+    "must_contain": [
+      [
+        "90 days",
+        "90-day",
+        "90 calendar days",
+        "90 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-wellness.claim_window",
+        "doc_ids": [
+          "claims-pet-pet-wellness"
+        ],
+        "match": [
+          "90 days",
+          "90-day",
+          "90 calendar days",
+          "90 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-pet-pet-wellness"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g046",
+    "type": "simple",
+    "question": "What is the grace period for late premiums on Multi-Pet?",
+    "expected_answer": "Premium grace period for Multi-Pet: 15 days.",
+    "must_contain": [
+      [
+        "15 days",
+        "15-day",
+        "15 calendar days",
+        "15 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.multi-pet.grace_period",
+        "doc_ids": [
+          "policy-pet-multi-pet"
+        ],
+        "match": [
+          "15 days",
+          "15-day",
+          "15 calendar days",
+          "15 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-pet-multi-pet"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g047",
+    "type": "simple",
+    "question": "How long do I have to appeal a denied Fleet Commercial claim?",
+    "expected_answer": "Appeal deadline for Fleet Commercial: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.fleet-commercial.appeal_window",
+        "doc_ids": [
+          "claims-auto-fleet-commercial"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-auto-fleet-commercial"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g048",
+    "type": "simple",
+    "question": "How much does a specialist visit cost on the Silver HMO plan?",
+    "expected_answer": "Specialist visit copay for Silver HMO: $90.",
+    "must_contain": [
+      [
+        "$90",
+        "90 dollars",
+        "usd 90"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-hmo.specialist_copay",
+        "doc_ids": [
+          "policy-health-silver-hmo"
+        ],
+        "match": [
+          "$90",
+          "90 dollars",
+          "usd 90"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-silver-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g049",
+    "type": "simple",
+    "question": "What is the grace period for late premiums on Gold PPO?",
+    "expected_answer": "Premium grace period for Gold PPO: 20 days.",
+    "must_contain": [
+      [
+        "20 days",
+        "20-day",
+        "20 calendar days",
+        "20 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.gold-ppo.grace_period",
+        "doc_ids": [
+          "policy-health-gold-ppo"
+        ],
+        "match": [
+          "20 days",
+          "20-day",
+          "20 calendar days",
+          "20 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-gold-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g050",
+    "type": "simple",
+    "question": "If my Platinum PPO claim is denied, by when must I appeal?",
+    "expected_answer": "Appeal deadline for Platinum PPO: 120 days.",
+    "must_contain": [
+      [
+        "120 days",
+        "120-day",
+        "120 calendar days",
+        "120 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.platinum-ppo.appeal_window",
+        "doc_ids": [
+          "claims-health-platinum-ppo"
+        ],
+        "match": [
+          "120 days",
+          "120-day",
+          "120 calendar days",
+          "120 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-health-platinum-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g051",
+    "type": "simple",
+    "question": "How many days of grace period does Fleet Commercial allow for missed payments?",
+    "expected_answer": "Premium grace period for Fleet Commercial: 60 days.",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.fleet-commercial.grace_period",
+        "doc_ids": [
+          "policy-auto-fleet-commercial"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-auto-fleet-commercial"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g052",
+    "type": "simple",
+    "question": "What are the phone support hours?",
+    "expected_answer": "Phone hours for Velmora: 8 a.m. to 8 p.m. Eastern, Monday through Friday.",
+    "must_contain": [
+      [
+        "8 a.m. to 8 p.m",
+        "8am to 8pm",
+        "8 am to 8 pm",
+        "8 a.m.\u20138 p.m",
+        "8am-8pm"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.phone_hours",
+        "doc_ids": [
+          "support-contact-hours"
+        ],
+        "match": [
+          "8 a.m. to 8 p.m",
+          "8am to 8pm",
+          "8 am to 8 pm",
+          "8 a.m.\u20138 p.m",
+          "8am-8pm"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-contact-hours"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g053",
+    "type": "simple",
+    "question": "If I miss a Term 30 premium payment, how long before coverage lapses?",
+    "expected_answer": "Premium grace period for Term 30: 15 days.",
+    "must_contain": [
+      [
+        "15 days",
+        "15-day",
+        "15 calendar days",
+        "15 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-30.grace_period",
+        "doc_ids": [
+          "policy-life-term-30"
+        ],
+        "match": [
+          "15 days",
+          "15-day",
+          "15 calendar days",
+          "15 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-life-term-30"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g054",
+    "type": "simple",
+    "question": "What is the claim filing deadline for the Premier Auto policy?",
+    "expected_answer": "Claim filing deadline for Premier Auto: 120 days.",
+    "must_contain": [
+      [
+        "120 days",
+        "120-day",
+        "120 calendar days",
+        "120 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.premier-auto.claim_window",
+        "doc_ids": [
+          "claims-auto-premier-auto"
+        ],
+        "match": [
+          "120 days",
+          "120-day",
+          "120 calendar days",
+          "120 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-auto-premier-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g055",
+    "type": "simple",
+    "question": "What deductible applies to a property claim under Landlord Protect?",
+    "expected_answer": "All-perils deductible for Landlord Protect: $500.",
+    "must_contain": [
+      [
+        "$500",
+        "500 dollars",
+        "usd 500"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.landlord-protect.home_deductible",
+        "doc_ids": [
+          "policy-home-landlord-protect"
+        ],
+        "match": [
+          "$500",
+          "500 dollars",
+          "usd 500"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-home-landlord-protect"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g056",
+    "type": "simple",
+    "question": "When does the password reset email link expire?",
+    "expected_answer": "Reset link min for Velmora: 30 minutes.",
+    "must_contain": [
+      [
+        "30 minutes",
+        "30 min"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.reset_link_min",
+        "doc_ids": [
+          "support-password-reset"
+        ],
+        "match": [
+          "30 minutes",
+          "30 min"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-password-reset"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g057",
+    "type": "simple",
+    "question": "Within how many days must a Landlord Protect claim be submitted?",
+    "expected_answer": "Claim filing deadline for Landlord Protect: 120 days.",
+    "must_contain": [
+      [
+        "120 days",
+        "120-day",
+        "120 calendar days",
+        "120 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.landlord-protect.claim_window",
+        "doc_ids": [
+          "claims-home-landlord-protect"
+        ],
+        "match": [
+          "120 days",
+          "120-day",
+          "120 calendar days",
+          "120 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-landlord-protect"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g058",
+    "type": "simple",
+    "question": "What is the ER copay for Platinum PPO?",
+    "expected_answer": "Emergency room copay for Platinum PPO: $100.",
+    "must_contain": [
+      [
+        "$100",
+        "100 dollars",
+        "usd 100"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.platinum-ppo.er_copay",
+        "doc_ids": [
+          "policy-health-platinum-ppo"
+        ],
+        "match": [
+          "$100",
+          "100 dollars",
+          "usd 100"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-platinum-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g059",
+    "type": "simple",
+    "question": "What is the per-person liability limit for injuries under Basic Liability?",
+    "expected_answer": "Bodily injury liability limit for Basic Liability: $25,000.",
+    "must_contain": [
+      [
+        "$25000",
+        "25000 dollars",
+        "usd 25000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.basic-liability.bi_limit",
+        "doc_ids": [
+          "policy-auto-basic-liability",
+          "brochure-auto-basic-liability"
+        ],
+        "match": [
+          "$25000",
+          "25000 dollars",
+          "usd 25000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-auto-basic-liability",
+      "policy-auto-basic-liability"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g060",
+    "type": "simple",
+    "question": "How fast do push notifications arrive after a claim status change?",
+    "expected_answer": "Push delay for Velmora: 15 minutes.",
+    "must_contain": [
+      [
+        "15 minutes",
+        "15 min"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.push_delay",
+        "doc_ids": [
+          "support-status-mobile"
+        ],
+        "match": [
+          "15 minutes",
+          "15 min"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-status-mobile"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g061",
+    "type": "simple",
+    "question": "How much is the paperless billing discount?",
+    "expected_answer": "Paperless discount for Velmora: $2 per month.",
+    "must_contain": [
+      [
+        "$2",
+        "2 dollars"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.paperless_discount",
+        "doc_ids": [
+          "support-payments"
+        ],
+        "match": [
+          "$2",
+          "2 dollars"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-payments"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g062",
+    "type": "simple",
+    "question": "What is the deductible on HomeBasic?",
+    "expected_answer": "All-perils deductible for HomeBasic: $2,000.",
+    "must_contain": [
+      [
+        "$2000",
+        "2000 dollars",
+        "usd 2000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homebasic.home_deductible",
+        "doc_ids": [
+          "policy-home-homebasic"
+        ],
+        "match": [
+          "$2000",
+          "2000 dollars",
+          "usd 2000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-home-homebasic"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g063",
+    "type": "simple",
+    "question": "What deductible do I have to meet on Silver PPO before coverage kicks in?",
+    "expected_answer": "Annual deductible for Silver PPO: $2,000.",
+    "must_contain": [
+      [
+        "$2000",
+        "2000 dollars",
+        "usd 2000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-ppo.deductible",
+        "doc_ids": [
+          "policy-health-silver-ppo",
+          "brochure-health-silver-ppo"
+        ],
+        "match": [
+          "$2000",
+          "2000 dollars",
+          "usd 2000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-health-silver-ppo",
+      "policy-health-silver-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g064",
+    "type": "simple",
+    "question": "What deductible applies to a property claim under HomeStandard?",
+    "expected_answer": "All-perils deductible for HomeStandard: $5,000.",
+    "must_contain": [
+      [
+        "$5000",
+        "5000 dollars",
+        "usd 5000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homestandard.home_deductible",
+        "doc_ids": [
+          "policy-home-homestandard",
+          "brochure-home-homestandard"
+        ],
+        "match": [
+          "$5000",
+          "5000 dollars",
+          "usd 5000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-home-homestandard",
+      "policy-home-homestandard"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g065",
+    "type": "simple",
+    "question": "How many days' notice will I get before my Whole Life coverage is cancelled?",
+    "expected_answer": "Cancellation notice period for Whole Life: 60 days.",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.whole-life.cancel_notice",
+        "doc_ids": [
+          "policy-life-whole-life"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-life-whole-life"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g066",
+    "type": "simple",
+    "question": "How many days' notice will I get before my Term 10 coverage is cancelled?",
+    "expected_answer": "Cancellation notice period for Term 10: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-10.cancel_notice",
+        "doc_ids": [
+          "policy-life-term-10"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-life-term-10"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g067",
+    "type": "simple",
+    "question": "What is the reimbursement rate on Senior Pet?",
+    "expected_answer": "Reimbursement rate for Senior Pet: 75%.",
+    "must_contain": [
+      [
+        "75%",
+        "75 percent",
+        "75 %"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.senior-pet.reimbursement",
+        "doc_ids": [
+          "policy-pet-senior-pet",
+          "brochure-pet-senior-pet"
+        ],
+        "match": [
+          "75%",
+          "75 percent",
+          "75 %"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-pet-senior-pet",
+      "policy-pet-senior-pet"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g068",
+    "type": "simple",
+    "question": "What is the claim filing deadline for the Condo Shield policy?",
+    "expected_answer": "Claim filing deadline for Condo Shield: 180 days.",
+    "must_contain": [
+      [
+        "180 days",
+        "180-day",
+        "180 calendar days",
+        "180 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.condo-shield.claim_window",
+        "doc_ids": [
+          "claims-home-condo-shield"
+        ],
+        "match": [
+          "180 days",
+          "180-day",
+          "180 calendar days",
+          "180 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-condo-shield"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g069",
+    "type": "simple",
+    "question": "What coinsurance applies on the Platinum PPO plan?",
+    "expected_answer": "Coinsurance rate for Platinum PPO: 15%.",
+    "must_contain": [
+      [
+        "15%",
+        "15 percent",
+        "15 %"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.platinum-ppo.coinsurance",
+        "doc_ids": [
+          "policy-health-platinum-ppo",
+          "brochure-health-platinum-ppo"
+        ],
+        "match": [
+          "15%",
+          "15 percent",
+          "15 %"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-health-platinum-ppo",
+      "policy-health-platinum-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g070",
+    "type": "simple",
+    "question": "How long do I have to file a claim under Whole Life?",
+    "expected_answer": "Claim filing deadline for Whole Life: 365 days.",
+    "must_contain": [
+      [
+        "365 days",
+        "365-day",
+        "365 calendar days",
+        "365 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.whole-life.claim_window",
+        "doc_ids": [
+          "claims-life-whole-life"
+        ],
+        "match": [
+          "365 days",
+          "365-day",
+          "365 calendar days",
+          "365 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-life-whole-life"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g071",
+    "type": "simple",
+    "question": "What is the maximum issue age for Term 10?",
+    "expected_answer": "Maximum issue age for Term 10: 70 years.",
+    "must_contain": [
+      [
+        "70 years",
+        "70-year",
+        "age 70",
+        "70 yrs"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-10.max_issue_age",
+        "doc_ids": [
+          "policy-life-term-10"
+        ],
+        "match": [
+          "70 years",
+          "70-year",
+          "age 70",
+          "70 yrs"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-life-term-10"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g072",
+    "type": "simple",
+    "question": "How much notice does Velmora Assurance give before cancelling a Exotic Pet plan?",
+    "expected_answer": "Cancellation notice period for Exotic Pet: 20 days.",
+    "must_contain": [
+      [
+        "20 days",
+        "20-day",
+        "20 calendar days",
+        "20 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.exotic-pet.cancel_notice",
+        "doc_ids": [
+          "policy-pet-exotic-pet"
+        ],
+        "match": [
+          "20 days",
+          "20-day",
+          "20 calendar days",
+          "20 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-pet-exotic-pet"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g073",
+    "type": "simple",
+    "question": "How much notice does Velmora Assurance give before cancelling a Term 30 policy?",
+    "expected_answer": "Cancellation notice period for Term 30: 20 days.",
+    "must_contain": [
+      [
+        "20 days",
+        "20-day",
+        "20 calendar days",
+        "20 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-30.cancel_notice",
+        "doc_ids": [
+          "policy-life-term-30"
+        ],
+        "match": [
+          "20 days",
+          "20-day",
+          "20 calendar days",
+          "20 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-life-term-30"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g074",
+    "type": "simple",
+    "question": "How long do I have to appeal a denied Standard Auto claim?",
+    "expected_answer": "Appeal deadline for Standard Auto: 120 days.",
+    "must_contain": [
+      [
+        "120 days",
+        "120-day",
+        "120 calendar days",
+        "120 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.standard-auto.appeal_window",
+        "doc_ids": [
+          "claims-auto-standard-auto"
+        ],
+        "match": [
+          "120 days",
+          "120-day",
+          "120 calendar days",
+          "120 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-auto-standard-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g075",
+    "type": "simple",
+    "question": "What is the claim filing deadline for the HomeBasic policy?",
+    "expected_answer": "Claim filing deadline for HomeBasic: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homebasic.claim_window",
+        "doc_ids": [
+          "claims-home-homebasic"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-homebasic"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g076",
+    "type": "simple",
+    "question": "How many failed login attempts before my account is locked?",
+    "expected_answer": "Lockout attempts for Velmora: 5 failed attempts.",
+    "must_contain": [
+      [
+        "5 failed",
+        "five failed",
+        "5 attempts",
+        "5 unsuccessful"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.lockout_attempts",
+        "doc_ids": [
+          "support-password-reset"
+        ],
+        "match": [
+          "5 failed",
+          "five failed",
+          "5 attempts",
+          "5 unsuccessful"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-password-reset"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g077",
+    "type": "simple",
+    "question": "What is the cancellation notice period for Fleet Commercial?",
+    "expected_answer": "Cancellation notice period for Fleet Commercial: 60 days.",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.fleet-commercial.cancel_notice",
+        "doc_ids": [
+          "policy-auto-fleet-commercial"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-auto-fleet-commercial"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g078",
+    "type": "simple",
+    "question": "What is the loss-of-use period under Renters Essential?",
+    "expected_answer": "Additional living expense period for Renters Essential: 18 months.",
+    "must_contain": [
+      [
+        "18 months",
+        "18-month"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.renters-essential.ale_months",
+        "doc_ids": [
+          "policy-home-renters-essential"
+        ],
+        "match": [
+          "18 months",
+          "18-month"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-home-renters-essential"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g079",
+    "type": "simple",
+    "question": "What is the emergency room copay under the Silver PPO plan?",
+    "expected_answer": "Emergency room copay for Silver PPO: $500.",
+    "must_contain": [
+      [
+        "$500",
+        "500 dollars",
+        "usd 500"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-ppo.er_copay",
+        "doc_ids": [
+          "policy-health-silver-ppo"
+        ],
+        "match": [
+          "$500",
+          "500 dollars",
+          "usd 500"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-silver-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g080",
+    "type": "simple",
+    "question": "What is the claim decision timeframe for Pet Wellness?",
+    "expected_answer": "Claim decision time for Pet Wellness: 15 days.",
+    "must_contain": [
+      [
+        "15 days",
+        "15-day",
+        "15 calendar days",
+        "15 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-wellness.decision_sla",
+        "doc_ids": [
+          "claims-pet-pet-wellness"
+        ],
+        "match": [
+          "15 days",
+          "15-day",
+          "15 calendar days",
+          "15 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-pet-pet-wellness"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g081",
+    "type": "simple",
+    "question": "How long do I have to cancel Final Expense for a full refund?",
+    "expected_answer": "Free-look period for Final Expense: 15 days.",
+    "must_contain": [
+      [
+        "15 days",
+        "15-day",
+        "15 calendar days",
+        "15 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.final-expense.free_look",
+        "doc_ids": [
+          "policy-life-final-expense",
+          "brochure-life-final-expense"
+        ],
+        "match": [
+          "15 days",
+          "15-day",
+          "15 calendar days",
+          "15 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-life-final-expense",
+      "policy-life-final-expense"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g082",
+    "type": "simple",
+    "question": "How much of my vet bill does Pet Accident Only pay back?",
+    "expected_answer": "Reimbursement rate for Pet Accident Only: 70%.",
+    "must_contain": [
+      [
+        "70%",
+        "70 percent",
+        "70 %"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-accident-only.reimbursement",
+        "doc_ids": [
+          "policy-pet-pet-accident-only",
+          "brochure-pet-pet-accident-only"
+        ],
+        "match": [
+          "70%",
+          "70 percent",
+          "70 %"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-pet-pet-accident-only",
+      "policy-pet-pet-accident-only"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g083",
+    "type": "simple",
+    "question": "What is the collision deductible on Premier Auto?",
+    "expected_answer": "Collision deductible for Premier Auto: $2,000.",
+    "must_contain": [
+      [
+        "$2000",
+        "2000 dollars",
+        "usd 2000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.premier-auto.collision_deductible",
+        "doc_ids": [
+          "policy-auto-premier-auto"
+        ],
+        "match": [
+          "$2000",
+          "2000 dollars",
+          "usd 2000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-auto-premier-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g084",
+    "type": "simple",
+    "question": "If my HomePlus claim is denied, by when must I appeal?",
+    "expected_answer": "Appeal deadline for HomePlus: 180 days.",
+    "must_contain": [
+      [
+        "180 days",
+        "180-day",
+        "180 calendar days",
+        "180 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homeplus.appeal_window",
+        "doc_ids": [
+          "claims-home-homeplus"
+        ],
+        "match": [
+          "180 days",
+          "180-day",
+          "180 calendar days",
+          "180 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-homeplus"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g085",
+    "type": "simple",
+    "question": "What is the grace period for late premiums on Rideshare Auto?",
+    "expected_answer": "Premium grace period for Rideshare Auto: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.rideshare-auto.grace_period",
+        "doc_ids": [
+          "policy-auto-rideshare-auto"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-auto-rideshare-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g086",
+    "type": "simple",
+    "question": "How long does it take to get a decision on a Landlord Protect claim?",
+    "expected_answer": "Claim decision time for Landlord Protect: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.landlord-protect.decision_sla",
+        "doc_ids": [
+          "claims-home-landlord-protect"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-landlord-protect"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g087",
+    "type": "simple",
+    "question": "What is the claim decision timeframe for Business Traveler?",
+    "expected_answer": "Claim decision time for Business Traveler: 10 days.",
+    "must_contain": [
+      [
+        "10 days",
+        "10-day",
+        "10 calendar days",
+        "10 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.business-traveler.decision_sla",
+        "doc_ids": [
+          "claims-travel-business-traveler"
+        ],
+        "match": [
+          "10 days",
+          "10-day",
+          "10 calendar days",
+          "10 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-travel-business-traveler"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g088",
+    "type": "simple",
+    "question": "What is the cancellation notice period for Bronze HMO?",
+    "expected_answer": "Cancellation notice period for Bronze HMO: 60 days.",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.bronze-hmo.cancel_notice",
+        "doc_ids": [
+          "policy-health-bronze-hmo"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-bronze-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g089",
+    "type": "simple",
+    "question": "How long does an account lockout last?",
+    "expected_answer": "Lockout minutes for Velmora: 15 minutes.",
+    "must_contain": [
+      [
+        "15 minutes",
+        "15 min"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.lockout_minutes",
+        "doc_ids": [
+          "support-password-reset"
+        ],
+        "match": [
+          "15 minutes",
+          "15 min"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-password-reset"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g090",
+    "type": "simple",
+    "question": "How often does claim status update in the portal?",
+    "expected_answer": "Status refresh for Velmora: every 4 hours.",
+    "must_contain": [
+      [
+        "4 hours",
+        "four hours"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.status_refresh",
+        "doc_ids": [
+          "support-claim-status"
+        ],
+        "match": [
+          "4 hours",
+          "four hours"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-claim-status"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g091",
+    "type": "simple",
+    "question": "How many days of grace period does Silver HMO allow for missed payments?",
+    "expected_answer": "Premium grace period for Silver HMO: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-hmo.grace_period",
+        "doc_ids": [
+          "policy-health-silver-hmo"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-silver-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g092",
+    "type": "simple",
+    "question": "If my Bronze HMO claim is denied, by when must I appeal?",
+    "expected_answer": "Appeal deadline for Bronze HMO: 180 days.",
+    "must_contain": [
+      [
+        "180 days",
+        "180-day",
+        "180 calendar days",
+        "180 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.bronze-hmo.appeal_window",
+        "doc_ids": [
+          "claims-health-bronze-hmo"
+        ],
+        "match": [
+          "180 days",
+          "180-day",
+          "180 calendar days",
+          "180 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-health-bronze-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g093",
+    "type": "simple",
+    "question": "How long does it take to process an address change?",
+    "expected_answer": "Address days for Velmora: 3 business days.",
+    "must_contain": [
+      [
+        "3 business days",
+        "three business days"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.address_days",
+        "doc_ids": [
+          "support-address-change"
+        ],
+        "match": [
+          "3 business days",
+          "three business days"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-address-change"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g094",
+    "type": "simple",
+    "question": "What is the out-of-pocket maximum for Bronze HMO?",
+    "expected_answer": "Out-of-pocket maximum for Bronze HMO: $4,000.",
+    "must_contain": [
+      [
+        "$4000",
+        "4000 dollars",
+        "usd 4000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.bronze-hmo.oop_max",
+        "doc_ids": [
+          "policy-health-bronze-hmo"
+        ],
+        "match": [
+          "$4000",
+          "4000 dollars",
+          "usd 4000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-bronze-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g095",
+    "type": "simple",
+    "question": "What is the appeal deadline for Term 20?",
+    "expected_answer": "Appeal deadline for Term 20: 120 days.",
+    "must_contain": [
+      [
+        "120 days",
+        "120-day",
+        "120 calendar days",
+        "120 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-20.appeal_window",
+        "doc_ids": [
+          "claims-life-term-20"
+        ],
+        "match": [
+          "120 days",
+          "120-day",
+          "120 calendar days",
+          "120 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-life-term-20"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g096",
+    "type": "simple",
+    "question": "How many days' notice will I get before my Term 20 coverage is cancelled?",
+    "expected_answer": "Cancellation notice period for Term 20: 45 days.",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-20.cancel_notice",
+        "doc_ids": [
+          "policy-life-term-20"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-life-term-20"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g097",
+    "type": "simple",
+    "question": "How much notice does Velmora Assurance give before cancelling a Trip Standard plan?",
+    "expected_answer": "Cancellation notice period for Trip Standard: 10 days.",
+    "must_contain": [
+      [
+        "10 days",
+        "10-day",
+        "10 calendar days",
+        "10 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.trip-standard.cancel_notice",
+        "doc_ids": [
+          "policy-travel-trip-standard"
+        ],
+        "match": [
+          "10 days",
+          "10-day",
+          "10 calendar days",
+          "10 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-travel-trip-standard"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g098",
+    "type": "simple",
+    "question": "How much do I pay for an emergency room visit on Catastrophic EPO?",
+    "expected_answer": "Emergency room copay for Catastrophic EPO: $350.",
+    "must_contain": [
+      [
+        "$350",
+        "350 dollars",
+        "usd 350"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.catastrophic-epo.er_copay",
+        "doc_ids": [
+          "policy-health-catastrophic-epo",
+          "brochure-health-catastrophic-epo"
+        ],
+        "match": [
+          "$350",
+          "350 dollars",
+          "usd 350"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-health-catastrophic-epo",
+      "policy-health-catastrophic-epo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g099",
+    "type": "simple",
+    "question": "How quickly will I get a callback after requesting one?",
+    "expected_answer": "Callback hours for Velmora: 2 business hours.",
+    "must_contain": [
+      [
+        "2 business hours",
+        "two business hours"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.callback_hours",
+        "doc_ids": [
+          "support-contact-hours"
+        ],
+        "match": [
+          "2 business hours",
+          "two business hours"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-contact-hours"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g100",
+    "type": "simple",
+    "question": "Within how many days must a Trip Lite claim be submitted?",
+    "expected_answer": "Claim filing deadline for Trip Lite: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.trip-lite.claim_window",
+        "doc_ids": [
+          "claims-travel-trip-lite"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-travel-trip-lite"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g101",
+    "type": "simple",
+    "question": "How large can a photo be when I upload it in the Velmora app?",
+    "expected_answer": "Upload mobile mb for Velmora: 10 MB.",
+    "must_contain": [
+      [
+        "10 mb",
+        "10mb"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "support.upload_mobile_mb",
+        "doc_ids": [
+          "support-upload-mobile"
+        ],
+        "match": [
+          "10 mb",
+          "10mb"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "support-upload-mobile"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g102",
+    "type": "simple",
+    "question": "How long do I have to file a claim under HomeStandard?",
+    "expected_answer": "Claim filing deadline for HomeStandard: 60 days.",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homestandard.claim_window",
+        "doc_ids": [
+          "claims-home-homestandard"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-homestandard"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g103",
+    "type": "simple",
+    "question": "How many days' notice will I get before my Business Traveler coverage is cancelled?",
+    "expected_answer": "Cancellation notice period for Business Traveler: 30 days.",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.business-traveler.cancel_notice",
+        "doc_ids": [
+          "policy-travel-business-traveler"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-travel-business-traveler"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g104",
+    "type": "simple",
+    "question": "What is the per-person liability limit for injuries under Standard Auto?",
+    "expected_answer": "Bodily injury liability limit for Standard Auto: $50,000.",
+    "must_contain": [
+      [
+        "$50000",
+        "50000 dollars",
+        "usd 50000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.standard-auto.bi_limit",
+        "doc_ids": [
+          "policy-auto-standard-auto"
+        ],
+        "match": [
+          "$50000",
+          "50000 dollars",
+          "usd 50000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-auto-standard-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g105",
+    "type": "simple",
+    "question": "Within how many days will Velmora Assurance decide a complete Renters Essential claim?",
+    "expected_answer": "Claim decision time for Renters Essential: 14 days.",
+    "must_contain": [
+      [
+        "14 days",
+        "14-day",
+        "14 calendar days",
+        "14 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.renters-essential.decision_sla",
+        "doc_ids": [
+          "claims-home-renters-essential"
+        ],
+        "match": [
+          "14 days",
+          "14-day",
+          "14 calendar days",
+          "14 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-renters-essential"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g106",
+    "type": "amendment",
+    "question": "If I crash my car, what deductible applies on the Classic Car policy?",
+    "expected_answer": "Collision deductible for Classic Car: $550 (per the latest amendment).",
+    "must_contain": [
+      [
+        "$550",
+        "550 dollars",
+        "usd 550"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.classic-car.collision_deductible@amended",
+        "doc_ids": [
+          "amendment-auto-classic-car-202605"
+        ],
+        "match": [
+          "$550",
+          "550 dollars",
+          "usd 550"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-auto-classic-car-202605"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g107",
+    "type": "amendment",
+    "question": "How much bodily injury coverage per person does Premier Auto provide?",
+    "expected_answer": "Bodily injury liability limit for Premier Auto: $750,000 (per the latest amendment).",
+    "must_contain": [
+      [
+        "$750000",
+        "750000 dollars",
+        "usd 750000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.premier-auto.bi_limit@amended",
+        "doc_ids": [
+          "amendment-auto-premier-auto-202607"
+        ],
+        "match": [
+          "$750000",
+          "750000 dollars",
+          "usd 750000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-auto-premier-auto-202607"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g108",
+    "type": "amendment",
+    "question": "What is the illness waiting period for Pet Accident Only?",
+    "expected_answer": "Illness waiting period for Pet Accident Only: 11 days (per the latest amendment).",
+    "must_contain": [
+      [
+        "11 days",
+        "11-day",
+        "11 calendar days",
+        "11 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-accident-only.illness_wait@amended",
+        "doc_ids": [
+          "amendment-pet-pet-accident-only-202603"
+        ],
+        "match": [
+          "11 days",
+          "11-day",
+          "11 calendar days",
+          "11 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-pet-pet-accident-only-202603"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g109",
+    "type": "amendment",
+    "question": "How much is the all-perils deductible for HomePlus?",
+    "expected_answer": "All-perils deductible for HomePlus: $1,500 (per the latest amendment).",
+    "must_contain": [
+      [
+        "$1500",
+        "1500 dollars",
+        "usd 1500"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homeplus.home_deductible@amended",
+        "doc_ids": [
+          "amendment-home-homeplus-202603"
+        ],
+        "match": [
+          "$1500",
+          "1500 dollars",
+          "usd 1500"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-home-homeplus-202603"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g110",
+    "type": "amendment",
+    "question": "What is the free-look period for Term 10?",
+    "expected_answer": "Free-look period for Term 10: 12 days (per the latest amendment).",
+    "must_contain": [
+      [
+        "12 days",
+        "12-day",
+        "12 calendar days",
+        "12 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-10.free_look@amended",
+        "doc_ids": [
+          "amendment-life-term-10-202604"
+        ],
+        "match": [
+          "12 days",
+          "12-day",
+          "12 calendar days",
+          "12 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-life-term-10-202604"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g111",
+    "type": "amendment",
+    "question": "What coinsurance applies on the Gold PPO plan?",
+    "expected_answer": "Coinsurance rate for Gold PPO: 50% (per the latest amendment).",
+    "must_contain": [
+      [
+        "50%",
+        "50 percent",
+        "50 %"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.gold-ppo.coinsurance@amended",
+        "doc_ids": [
+          "amendment-health-gold-ppo-202606"
+        ],
+        "match": [
+          "50%",
+          "50 percent",
+          "50 %"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-health-gold-ppo-202606"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g112",
+    "type": "amendment",
+    "question": "What deductible do I have to meet on Bronze HMO before coverage kicks in?",
+    "expected_answer": "Annual deductible for Bronze HMO: $1,000 (per the latest amendment).",
+    "must_contain": [
+      [
+        "$1000",
+        "1000 dollars",
+        "usd 1000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.bronze-hmo.deductible@amended",
+        "doc_ids": [
+          "amendment-health-bronze-hmo-202602"
+        ],
+        "match": [
+          "$1000",
+          "1000 dollars",
+          "usd 1000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-health-bronze-hmo-202602"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g113",
+    "type": "amendment",
+    "question": "What percentage of vet bills does Multi-Pet reimburse?",
+    "expected_answer": "Reimbursement rate for Multi-Pet: 120% (per the latest amendment).",
+    "must_contain": [
+      [
+        "120%",
+        "120 percent",
+        "120 %"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.multi-pet.reimbursement@amended",
+        "doc_ids": [
+          "amendment-pet-multi-pet-202601"
+        ],
+        "match": [
+          "120%",
+          "120 percent",
+          "120 %"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-pet-multi-pet-202601"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g114",
+    "type": "amendment",
+    "question": "What is the specialist copay on Silver PPO?",
+    "expected_answer": "Specialist visit copay for Silver PPO: $50 (per the latest amendment).",
+    "must_contain": [
+      [
+        "$50",
+        "50 dollars",
+        "usd 50"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-ppo.specialist_copay@amended",
+        "doc_ids": [
+          "amendment-health-silver-ppo-202607"
+        ],
+        "match": [
+          "$50",
+          "50 dollars",
+          "usd 50"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-health-silver-ppo-202607"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g115",
+    "type": "amendment",
+    "question": "Is there an age limit to apply for Term 30?",
+    "expected_answer": "Maximum issue age for Term 30: 39 years (per the latest amendment).",
+    "must_contain": [
+      [
+        "39 years",
+        "39-year",
+        "age 39",
+        "39 yrs"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-30.max_issue_age@amended",
+        "doc_ids": [
+          "amendment-life-term-30-202601"
+        ],
+        "match": [
+          "39 years",
+          "39-year",
+          "age 39",
+          "39 yrs"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-life-term-30-202601"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g116",
+    "type": "amendment",
+    "question": "What is the baggage delay waiting period on Business Traveler?",
+    "expected_answer": "Baggage delay waiting period for Business Traveler: 15 hours (per the latest amendment).",
+    "must_contain": [
+      [
+        "15 hours",
+        "15-hour",
+        "15 hrs"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.business-traveler.baggage_delay@amended",
+        "doc_ids": [
+          "amendment-travel-business-traveler-202607"
+        ],
+        "match": [
+          "15 hours",
+          "15-hour",
+          "15 hrs"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-travel-business-traveler-202607"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g117",
+    "type": "amendment",
+    "question": "Up to what amount does Trip Standard cover medical evacuation?",
+    "expected_answer": "Medical evacuation limit for Trip Standard: $375,000 (per the latest amendment).",
+    "must_contain": [
+      [
+        "$375000",
+        "375000 dollars",
+        "usd 375000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.trip-standard.evac_limit@amended",
+        "doc_ids": [
+          "amendment-travel-trip-standard-202606"
+        ],
+        "match": [
+          "$375000",
+          "375000 dollars",
+          "usd 375000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-travel-trip-standard-202606"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g118",
+    "type": "amendment",
+    "question": "What is the loss-of-use period under Landlord Protect?",
+    "expected_answer": "Additional living expense period for Landlord Protect: 30 months (per the latest amendment).",
+    "must_contain": [
+      [
+        "30 months",
+        "30-month"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.landlord-protect.ale_months@amended",
+        "doc_ids": [
+          "amendment-home-landlord-protect-202605"
+        ],
+        "match": [
+          "30 months",
+          "30-month"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-home-landlord-protect-202605"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g119",
+    "type": "amendment",
+    "question": "What is the deductible on Renters Essential?",
+    "expected_answer": "All-perils deductible for Renters Essential: $3,000 (per the latest amendment).",
+    "must_contain": [
+      [
+        "$3000",
+        "3000 dollars",
+        "usd 3000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.renters-essential.home_deductible@amended",
+        "doc_ids": [
+          "amendment-home-renters-essential-202606"
+        ],
+        "match": [
+          "$3000",
+          "3000 dollars",
+          "usd 3000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-home-renters-essential-202606"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g120",
+    "type": "amendment",
+    "question": "What is the highest death benefit available on Universal Life?",
+    "expected_answer": "Maximum face amount for Universal Life: $7,500,000 (per the latest amendment).",
+    "must_contain": [
+      [
+        "$7500000",
+        "7500000 dollars",
+        "usd 7500000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.universal-life.max_face@amended",
+        "doc_ids": [
+          "amendment-life-universal-life-202607"
+        ],
+        "match": [
+          "$7500000",
+          "7500000 dollars",
+          "usd 7500000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-life-universal-life-202607"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g121",
+    "type": "comparison",
+    "question": "Which has the longer premium grace period: Pet Wellness or Exotic Pet?",
+    "expected_answer": "Exotic Pet (Pet Wellness: 20 days; Exotic Pet: 60 days).",
+    "must_contain": [
+      [
+        "20 days",
+        "20-day",
+        "20 calendar days",
+        "20 day"
+      ],
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-wellness.grace_period",
+        "doc_ids": [
+          "policy-pet-pet-wellness"
+        ],
+        "match": [
+          "20 days",
+          "20-day",
+          "20 calendar days",
+          "20 day"
+        ]
+      },
+      {
+        "fact_id": "pet.exotic-pet.grace_period",
+        "doc_ids": [
+          "policy-pet-exotic-pet"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-pet-exotic-pet",
+      "policy-pet-pet-wellness"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g122",
+    "type": "comparison",
+    "question": "Compare the collision deductible of Classic Car and Fleet Commercial \u2014 which is higher?",
+    "expected_answer": "Fleet Commercial (Classic Car: $550; Fleet Commercial: $1,000).",
+    "must_contain": [
+      [
+        "$550",
+        "550 dollars",
+        "usd 550"
+      ],
+      [
+        "$1000",
+        "1000 dollars",
+        "usd 1000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.classic-car.collision_deductible@amended",
+        "doc_ids": [
+          "amendment-auto-classic-car-202605"
+        ],
+        "match": [
+          "$550",
+          "550 dollars",
+          "usd 550"
+        ]
+      },
+      {
+        "fact_id": "auto.fleet-commercial.collision_deductible",
+        "doc_ids": [
+          "policy-auto-fleet-commercial"
+        ],
+        "match": [
+          "$1000",
+          "1000 dollars",
+          "usd 1000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-auto-classic-car-202605",
+      "policy-auto-fleet-commercial"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g123",
+    "type": "comparison",
+    "question": "Which has the higher water backup sublimit: Condo Shield or HomeBasic?",
+    "expected_answer": "HomeBasic (Condo Shield: $7,500; HomeBasic: $25,000).",
+    "must_contain": [
+      [
+        "$7500",
+        "7500 dollars",
+        "usd 7500"
+      ],
+      [
+        "$25000",
+        "25000 dollars",
+        "usd 25000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.condo-shield.water_backup",
+        "doc_ids": [
+          "policy-home-condo-shield",
+          "brochure-home-condo-shield"
+        ],
+        "match": [
+          "$7500",
+          "7500 dollars",
+          "usd 7500"
+        ]
+      },
+      {
+        "fact_id": "home.homebasic.water_backup",
+        "doc_ids": [
+          "policy-home-homebasic",
+          "brochure-home-homebasic"
+        ],
+        "match": [
+          "$25000",
+          "25000 dollars",
+          "usd 25000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-home-condo-shield",
+      "brochure-home-homebasic",
+      "policy-home-condo-shield",
+      "policy-home-homebasic"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g124",
+    "type": "comparison",
+    "question": "Which has the shorter cancellation notice period: Bronze HMO or Platinum PPO?",
+    "expected_answer": "Platinum PPO (Bronze HMO: 60 days; Platinum PPO: 30 days).",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ],
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.bronze-hmo.cancel_notice",
+        "doc_ids": [
+          "policy-health-bronze-hmo"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      },
+      {
+        "fact_id": "health.platinum-ppo.cancel_notice",
+        "doc_ids": [
+          "policy-health-platinum-ppo"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-health-bronze-hmo",
+      "policy-health-platinum-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g125",
+    "type": "comparison",
+    "question": "Which has the longer premium grace period: Universal Life or Whole Life?",
+    "expected_answer": "Whole Life (Universal Life: 31 days; Whole Life: 60 days).",
+    "must_contain": [
+      [
+        "31 days",
+        "31-day",
+        "31 calendar days",
+        "31 day"
+      ],
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.universal-life.grace_period",
+        "doc_ids": [
+          "policy-life-universal-life"
+        ],
+        "match": [
+          "31 days",
+          "31-day",
+          "31 calendar days",
+          "31 day"
+        ]
+      },
+      {
+        "fact_id": "life.whole-life.grace_period",
+        "doc_ids": [
+          "policy-life-whole-life"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-life-universal-life",
+      "policy-life-whole-life"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g126",
+    "type": "comparison",
+    "question": "Between the Trip Premier and Business Traveler plans, which one has a shorter baggage delay waiting period?",
+    "expected_answer": "Trip Premier (Trip Premier: 12 hours; Business Traveler: 15 hours).",
+    "must_contain": [
+      [
+        "12 hours",
+        "12-hour",
+        "12 hrs"
+      ],
+      [
+        "15 hours",
+        "15-hour",
+        "15 hrs"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.trip-premier.baggage_delay@amended",
+        "doc_ids": [
+          "amendment-travel-trip-premier-202607"
+        ],
+        "match": [
+          "12 hours",
+          "12-hour",
+          "12 hrs"
+        ]
+      },
+      {
+        "fact_id": "travel.business-traveler.baggage_delay@amended",
+        "doc_ids": [
+          "amendment-travel-business-traveler-202607"
+        ],
+        "match": [
+          "15 hours",
+          "15-hour",
+          "15 hrs"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-travel-business-traveler-202607",
+      "amendment-travel-trip-premier-202607"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g127",
+    "type": "comparison",
+    "question": "Which has the lower medical evacuation limit: Trip Premier or Student Abroad?",
+    "expected_answer": "Trip Premier (Trip Premier: $50,000; Student Abroad: $250,000).",
+    "must_contain": [
+      [
+        "$50000",
+        "50000 dollars",
+        "usd 50000"
+      ],
+      [
+        "$250000",
+        "250000 dollars",
+        "usd 250000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.trip-premier.evac_limit",
+        "doc_ids": [
+          "policy-travel-trip-premier"
+        ],
+        "match": [
+          "$50000",
+          "50000 dollars",
+          "usd 50000"
+        ]
+      },
+      {
+        "fact_id": "travel.student-abroad.evac_limit",
+        "doc_ids": [
+          "policy-travel-student-abroad"
+        ],
+        "match": [
+          "$250000",
+          "250000 dollars",
+          "usd 250000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-travel-student-abroad",
+      "policy-travel-trip-premier"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g128",
+    "type": "comparison",
+    "question": "Between the Pet Accident Only and Pet Wellness plans, which one has a faster claim decision time?",
+    "expected_answer": "Pet Wellness (Pet Accident Only: 21 days; Pet Wellness: 15 days).",
+    "must_contain": [
+      [
+        "21 days",
+        "21-day",
+        "21 calendar days",
+        "21 day"
+      ],
+      [
+        "15 days",
+        "15-day",
+        "15 calendar days",
+        "15 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-accident-only.decision_sla",
+        "doc_ids": [
+          "claims-pet-pet-accident-only"
+        ],
+        "match": [
+          "21 days",
+          "21-day",
+          "21 calendar days",
+          "21 day"
+        ]
+      },
+      {
+        "fact_id": "pet.pet-wellness.decision_sla",
+        "doc_ids": [
+          "claims-pet-pet-wellness"
+        ],
+        "match": [
+          "15 days",
+          "15-day",
+          "15 calendar days",
+          "15 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-pet-pet-accident-only",
+      "claims-pet-pet-wellness"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g129",
+    "type": "comparison",
+    "question": "Between the Trip Standard and Trip Premier plans, which one has a higher trip cancellation limit?",
+    "expected_answer": "Trip Premier (Trip Standard: $5,000; Trip Premier: $7,500).",
+    "must_contain": [
+      [
+        "$5000",
+        "5000 dollars",
+        "usd 5000"
+      ],
+      [
+        "$7500",
+        "7500 dollars",
+        "usd 7500"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.trip-standard.trip_cancel",
+        "doc_ids": [
+          "policy-travel-trip-standard",
+          "brochure-travel-trip-standard"
+        ],
+        "match": [
+          "$5000",
+          "5000 dollars",
+          "usd 5000"
+        ]
+      },
+      {
+        "fact_id": "travel.trip-premier.trip_cancel",
+        "doc_ids": [
+          "policy-travel-trip-premier",
+          "brochure-travel-trip-premier"
+        ],
+        "match": [
+          "$7500",
+          "7500 dollars",
+          "usd 7500"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-travel-trip-premier",
+      "brochure-travel-trip-standard",
+      "policy-travel-trip-premier",
+      "policy-travel-trip-standard"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g130",
+    "type": "comparison",
+    "question": "Which has the longer appeal deadline: Pet Complete or Multi-Pet?",
+    "expected_answer": "Multi-Pet (Pet Complete: 60 days; Multi-Pet: 120 days).",
+    "must_contain": [
+      [
+        "60 days",
+        "60-day",
+        "60 calendar days",
+        "60 day"
+      ],
+      [
+        "120 days",
+        "120-day",
+        "120 calendar days",
+        "120 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.pet-complete.appeal_window",
+        "doc_ids": [
+          "claims-pet-pet-complete"
+        ],
+        "match": [
+          "60 days",
+          "60-day",
+          "60 calendar days",
+          "60 day"
+        ]
+      },
+      {
+        "fact_id": "pet.multi-pet.appeal_window",
+        "doc_ids": [
+          "claims-pet-multi-pet"
+        ],
+        "match": [
+          "120 days",
+          "120-day",
+          "120 calendar days",
+          "120 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-pet-multi-pet",
+      "claims-pet-pet-complete"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g131",
+    "type": "comparison",
+    "question": "Between the Whole Life and Final Expense policys, which one has a higher maximum issue age?",
+    "expected_answer": "Final Expense (Whole Life: 60 years; Final Expense: 85 years).",
+    "must_contain": [
+      [
+        "60 years",
+        "60-year",
+        "age 60",
+        "60 yrs"
+      ],
+      [
+        "85 years",
+        "85-year",
+        "age 85",
+        "85 yrs"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.whole-life.max_issue_age",
+        "doc_ids": [
+          "policy-life-whole-life",
+          "brochure-life-whole-life"
+        ],
+        "match": [
+          "60 years",
+          "60-year",
+          "age 60",
+          "60 yrs"
+        ]
+      },
+      {
+        "fact_id": "life.final-expense.max_issue_age",
+        "doc_ids": [
+          "policy-life-final-expense"
+        ],
+        "match": [
+          "85 years",
+          "85-year",
+          "age 85",
+          "85 yrs"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-life-whole-life",
+      "policy-life-final-expense",
+      "policy-life-whole-life"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g132",
+    "type": "comparison",
+    "question": "Which has the shorter premium grace period: Rideshare Auto or Basic Liability?",
+    "expected_answer": "Basic Liability (Rideshare Auto: 30 days; Basic Liability: 20 days).",
+    "must_contain": [
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ],
+      [
+        "20 days",
+        "20-day",
+        "20 calendar days",
+        "20 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.rideshare-auto.grace_period",
+        "doc_ids": [
+          "policy-auto-rideshare-auto"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      },
+      {
+        "fact_id": "auto.basic-liability.grace_period",
+        "doc_ids": [
+          "policy-auto-basic-liability"
+        ],
+        "match": [
+          "20 days",
+          "20-day",
+          "20 calendar days",
+          "20 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-auto-basic-liability",
+      "policy-auto-rideshare-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g133",
+    "type": "comparison",
+    "question": "Between the Silver HMO and Bronze HMO plans, which one has a lower annual deductible?",
+    "expected_answer": "Silver HMO (Silver HMO: $250; Bronze HMO: $1,000).",
+    "must_contain": [
+      [
+        "$250",
+        "250 dollars",
+        "usd 250"
+      ],
+      [
+        "$1000",
+        "1000 dollars",
+        "usd 1000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.silver-hmo.deductible",
+        "doc_ids": [
+          "policy-health-silver-hmo",
+          "brochure-health-silver-hmo"
+        ],
+        "match": [
+          "$250",
+          "250 dollars",
+          "usd 250"
+        ]
+      },
+      {
+        "fact_id": "health.bronze-hmo.deductible@amended",
+        "doc_ids": [
+          "amendment-health-bronze-hmo-202602"
+        ],
+        "match": [
+          "$1000",
+          "1000 dollars",
+          "usd 1000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "amendment-health-bronze-hmo-202602",
+      "brochure-health-silver-hmo",
+      "policy-health-silver-hmo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g134",
+    "type": "comparison",
+    "question": "Which has the higher annual benefit limit: Senior Pet or Pet Wellness?",
+    "expected_answer": "Senior Pet (Senior Pet: $15,000; Pet Wellness: $5,000).",
+    "must_contain": [
+      [
+        "$15000",
+        "15000 dollars",
+        "usd 15000"
+      ],
+      [
+        "$5000",
+        "5000 dollars",
+        "usd 5000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.senior-pet.pet_annual_limit",
+        "doc_ids": [
+          "policy-pet-senior-pet"
+        ],
+        "match": [
+          "$15000",
+          "15000 dollars",
+          "usd 15000"
+        ]
+      },
+      {
+        "fact_id": "pet.pet-wellness.pet_annual_limit",
+        "doc_ids": [
+          "policy-pet-pet-wellness"
+        ],
+        "match": [
+          "$5000",
+          "5000 dollars",
+          "usd 5000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-pet-pet-wellness",
+      "policy-pet-senior-pet"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g135",
+    "type": "comparison",
+    "question": "Which has the slower claim decision time: Term 30 or Universal Life?",
+    "expected_answer": "Universal Life (Term 30: 10 days; Universal Life: 14 days).",
+    "must_contain": [
+      [
+        "10 days",
+        "10-day",
+        "10 calendar days",
+        "10 day"
+      ],
+      [
+        "14 days",
+        "14-day",
+        "14 calendar days",
+        "14 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-30.decision_sla",
+        "doc_ids": [
+          "claims-life-term-30"
+        ],
+        "match": [
+          "10 days",
+          "10-day",
+          "10 calendar days",
+          "10 day"
+        ]
+      },
+      {
+        "fact_id": "life.universal-life.decision_sla",
+        "doc_ids": [
+          "claims-life-universal-life"
+        ],
+        "match": [
+          "14 days",
+          "14-day",
+          "14 calendar days",
+          "14 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-life-term-30",
+      "claims-life-universal-life"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g136",
+    "type": "comparison",
+    "question": "Between the Term 20 and Universal Life policys, which one has a higher maximum issue age?",
+    "expected_answer": "Term 20 (Term 20: 75 years; Universal Life: 55 years).",
+    "must_contain": [
+      [
+        "75 years",
+        "75-year",
+        "age 75",
+        "75 yrs"
+      ],
+      [
+        "55 years",
+        "55-year",
+        "age 55",
+        "55 yrs"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "life.term-20.max_issue_age",
+        "doc_ids": [
+          "policy-life-term-20",
+          "brochure-life-term-20"
+        ],
+        "match": [
+          "75 years",
+          "75-year",
+          "age 75",
+          "75 yrs"
+        ]
+      },
+      {
+        "fact_id": "life.universal-life.max_issue_age",
+        "doc_ids": [
+          "policy-life-universal-life",
+          "brochure-life-universal-life"
+        ],
+        "match": [
+          "55 years",
+          "55-year",
+          "age 55",
+          "55 yrs"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-life-term-20",
+      "brochure-life-universal-life",
+      "policy-life-term-20",
+      "policy-life-universal-life"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g137",
+    "type": "comparison",
+    "question": "Between the Annual Multi-Trip and Student Abroad plans, which one has a shorter baggage delay waiting period?",
+    "expected_answer": "Student Abroad (Annual Multi-Trip: 24 hours; Student Abroad: 18 hours).",
+    "must_contain": [
+      [
+        "24 hours",
+        "24-hour",
+        "24 hrs"
+      ],
+      [
+        "18 hours",
+        "18-hour",
+        "18 hrs"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.annual-multi-trip.baggage_delay",
+        "doc_ids": [
+          "policy-travel-annual-multi-trip",
+          "brochure-travel-annual-multi-trip"
+        ],
+        "match": [
+          "24 hours",
+          "24-hour",
+          "24 hrs"
+        ]
+      },
+      {
+        "fact_id": "travel.student-abroad.baggage_delay",
+        "doc_ids": [
+          "policy-travel-student-abroad",
+          "brochure-travel-student-abroad"
+        ],
+        "match": [
+          "18 hours",
+          "18-hour",
+          "18 hrs"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-travel-annual-multi-trip",
+      "brochure-travel-student-abroad",
+      "policy-travel-annual-multi-trip",
+      "policy-travel-student-abroad"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g138",
+    "type": "comparison",
+    "question": "Between the Annual Multi-Trip and Trip Standard plans, which one has a shorter cancel-for-any-reason purchase window?",
+    "expected_answer": "Annual Multi-Trip (Annual Multi-Trip: 20 days; Trip Standard: 21 days).",
+    "must_contain": [
+      [
+        "20 days",
+        "20-day",
+        "20 calendar days",
+        "20 day"
+      ],
+      [
+        "21 days",
+        "21-day",
+        "21 calendar days",
+        "21 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.annual-multi-trip.cfar_window",
+        "doc_ids": [
+          "policy-travel-annual-multi-trip"
+        ],
+        "match": [
+          "20 days",
+          "20-day",
+          "20 calendar days",
+          "20 day"
+        ]
+      },
+      {
+        "fact_id": "travel.trip-standard.cfar_window",
+        "doc_ids": [
+          "policy-travel-trip-standard"
+        ],
+        "match": [
+          "21 days",
+          "21-day",
+          "21 calendar days",
+          "21 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-travel-annual-multi-trip",
+      "policy-travel-trip-standard"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g139",
+    "type": "comparison",
+    "question": "Compare the coinsurance rate of Bronze HMO and Silver PPO \u2014 which is lower?",
+    "expected_answer": "Silver PPO (Bronze HMO: 30%; Silver PPO: 10%).",
+    "must_contain": [
+      [
+        "30%",
+        "30 percent",
+        "30 %"
+      ],
+      [
+        "10%",
+        "10 percent",
+        "10 %"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "health.bronze-hmo.coinsurance",
+        "doc_ids": [
+          "policy-health-bronze-hmo",
+          "brochure-health-bronze-hmo"
+        ],
+        "match": [
+          "30%",
+          "30 percent",
+          "30 %"
+        ]
+      },
+      {
+        "fact_id": "health.silver-ppo.coinsurance",
+        "doc_ids": [
+          "policy-health-silver-ppo"
+        ],
+        "match": [
+          "10%",
+          "10 percent",
+          "10 %"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-health-bronze-hmo",
+      "policy-health-bronze-hmo",
+      "policy-health-silver-ppo"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g140",
+    "type": "comparison",
+    "question": "Which has the longer claim filing deadline: Senior Pet or Pet Complete?",
+    "expected_answer": "Senior Pet (Senior Pet: 45 days; Pet Complete: 30 days).",
+    "must_contain": [
+      [
+        "45 days",
+        "45-day",
+        "45 calendar days",
+        "45 day"
+      ],
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.senior-pet.claim_window",
+        "doc_ids": [
+          "claims-pet-senior-pet"
+        ],
+        "match": [
+          "45 days",
+          "45-day",
+          "45 calendar days",
+          "45 day"
+        ]
+      },
+      {
+        "fact_id": "pet.pet-complete.claim_window",
+        "doc_ids": [
+          "claims-pet-pet-complete"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-pet-pet-complete",
+      "claims-pet-senior-pet"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g141",
+    "type": "comparison",
+    "question": "Between the HomeStandard and HomePlus policys, which one has a slower claim decision time?",
+    "expected_answer": "HomePlus (HomeStandard: 10 days; HomePlus: 30 days).",
+    "must_contain": [
+      [
+        "10 days",
+        "10-day",
+        "10 calendar days",
+        "10 day"
+      ],
+      [
+        "30 days",
+        "30-day",
+        "30 calendar days",
+        "30 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homestandard.decision_sla",
+        "doc_ids": [
+          "claims-home-homestandard"
+        ],
+        "match": [
+          "10 days",
+          "10-day",
+          "10 calendar days",
+          "10 day"
+        ]
+      },
+      {
+        "fact_id": "home.homeplus.decision_sla",
+        "doc_ids": [
+          "claims-home-homeplus"
+        ],
+        "match": [
+          "30 days",
+          "30-day",
+          "30 calendar days",
+          "30 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-home-homeplus",
+      "claims-home-homestandard"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g142",
+    "type": "comparison",
+    "question": "Compare the jewelry theft limit of HomeBasic and Renters Essential \u2014 which is lower?",
+    "expected_answer": "Renters Essential (HomeBasic: $7,500; Renters Essential: $2,500).",
+    "must_contain": [
+      [
+        "$7500",
+        "7500 dollars",
+        "usd 7500"
+      ],
+      [
+        "$2500",
+        "2500 dollars",
+        "usd 2500"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "home.homebasic.jewelry_limit",
+        "doc_ids": [
+          "policy-home-homebasic"
+        ],
+        "match": [
+          "$7500",
+          "7500 dollars",
+          "usd 7500"
+        ]
+      },
+      {
+        "fact_id": "home.renters-essential.jewelry_limit",
+        "doc_ids": [
+          "policy-home-renters-essential",
+          "brochure-home-renters-essential"
+        ],
+        "match": [
+          "$2500",
+          "2500 dollars",
+          "usd 2500"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-home-renters-essential",
+      "policy-home-homebasic",
+      "policy-home-renters-essential"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g143",
+    "type": "comparison",
+    "question": "Between the Rideshare Auto and Fleet Commercial policys, which one has a lower rental car reimbursement?",
+    "expected_answer": "Fleet Commercial (Rideshare Auto: $60; Fleet Commercial: $35).",
+    "must_contain": [
+      [
+        "$60",
+        "60 dollars",
+        "usd 60"
+      ],
+      [
+        "$35",
+        "35 dollars",
+        "usd 35"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "auto.rideshare-auto.rental_per_day",
+        "doc_ids": [
+          "policy-auto-rideshare-auto"
+        ],
+        "match": [
+          "$60",
+          "60 dollars",
+          "usd 60"
+        ]
+      },
+      {
+        "fact_id": "auto.fleet-commercial.rental_per_day",
+        "doc_ids": [
+          "policy-auto-fleet-commercial",
+          "brochure-auto-fleet-commercial"
+        ],
+        "match": [
+          "$35",
+          "35 dollars",
+          "usd 35"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "brochure-auto-fleet-commercial",
+      "policy-auto-fleet-commercial",
+      "policy-auto-rideshare-auto"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g144",
+    "type": "comparison",
+    "question": "Compare the cancel-for-any-reason purchase window of Annual Multi-Trip and Student Abroad \u2014 which is shorter?",
+    "expected_answer": "Student Abroad (Annual Multi-Trip: 20 days; Student Abroad: 14 days).",
+    "must_contain": [
+      [
+        "20 days",
+        "20-day",
+        "20 calendar days",
+        "20 day"
+      ],
+      [
+        "14 days",
+        "14-day",
+        "14 calendar days",
+        "14 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "travel.annual-multi-trip.cfar_window",
+        "doc_ids": [
+          "policy-travel-annual-multi-trip"
+        ],
+        "match": [
+          "20 days",
+          "20-day",
+          "20 calendar days",
+          "20 day"
+        ]
+      },
+      {
+        "fact_id": "travel.student-abroad.cfar_window",
+        "doc_ids": [
+          "policy-travel-student-abroad"
+        ],
+        "match": [
+          "14 days",
+          "14-day",
+          "14 calendar days",
+          "14 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "policy-travel-annual-multi-trip",
+      "policy-travel-student-abroad"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g145",
+    "type": "comparison",
+    "question": "Which has the shorter claim filing deadline: Exotic Pet or Pet Accident Only?",
+    "expected_answer": "Exotic Pet (Exotic Pet: 180 days; Pet Accident Only: 365 days).",
+    "must_contain": [
+      [
+        "180 days",
+        "180-day",
+        "180 calendar days",
+        "180 day"
+      ],
+      [
+        "365 days",
+        "365-day",
+        "365 calendar days",
+        "365 day"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "pet.exotic-pet.claim_window",
+        "doc_ids": [
+          "claims-pet-exotic-pet"
+        ],
+        "match": [
+          "180 days",
+          "180-day",
+          "180 calendar days",
+          "180 day"
+        ]
+      },
+      {
+        "fact_id": "pet.pet-accident-only.claim_window",
+        "doc_ids": [
+          "claims-pet-pet-accident-only"
+        ],
+        "match": [
+          "365 days",
+          "365-day",
+          "365 calendar days",
+          "365 day"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "claims-pet-exotic-pet",
+      "claims-pet-pet-accident-only"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g146",
+    "type": "internal",
+    "question": "What is the large-loss referral threshold for travel claims?",
+    "expected_answer": "Large-loss referral threshold: $25,000.",
+    "must_contain": [
+      [
+        "$25000",
+        "25000 dollars",
+        "usd 25000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.travel.large_loss",
+        "doc_ids": [
+          "internal-travel-adjuster-guidelines"
+        ],
+        "match": [
+          "$25000",
+          "25000 dollars",
+          "usd 25000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-travel-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g147",
+    "type": "internal",
+    "question": "After how many claims in 12 months is a home policyholder referred to SIU?",
+    "expected_answer": "Siu referral trigger: 6 claims.",
+    "must_contain": [
+      [
+        "6 claims"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.home.siu_count",
+        "doc_ids": [
+          "internal-home-adjuster-guidelines"
+        ],
+        "match": [
+          "6 claims"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-home-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g148",
+    "type": "internal",
+    "question": "What is the large-loss referral threshold for life claims?",
+    "expected_answer": "Large-loss referral threshold: $75,000.",
+    "must_contain": [
+      [
+        "$75000",
+        "75000 dollars",
+        "usd 75000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.life.large_loss",
+        "doc_ids": [
+          "internal-life-adjuster-guidelines"
+        ],
+        "match": [
+          "$75000",
+          "75000 dollars",
+          "usd 75000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-life-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g149",
+    "type": "internal",
+    "question": "What is the large-loss referral threshold for pet claims?",
+    "expected_answer": "Large-loss referral threshold: $15,000.",
+    "must_contain": [
+      [
+        "$15000",
+        "15000 dollars",
+        "usd 15000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.pet.large_loss",
+        "doc_ids": [
+          "internal-pet-adjuster-guidelines"
+        ],
+        "match": [
+          "$15000",
+          "15000 dollars",
+          "usd 15000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-pet-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g150",
+    "type": "internal",
+    "question": "After how many claims in 12 months is a pet policyholder referred to SIU?",
+    "expected_answer": "Siu referral trigger: 7 claims.",
+    "must_contain": [
+      [
+        "7 claims"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.pet.siu_count",
+        "doc_ids": [
+          "internal-pet-adjuster-guidelines"
+        ],
+        "match": [
+          "7 claims"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-pet-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g151",
+    "type": "internal",
+    "question": "After how many claims in 12 months is a life policyholder referred to SIU?",
+    "expected_answer": "Siu referral trigger: 2 claims.",
+    "must_contain": [
+      [
+        "2 claims"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.life.siu_count",
+        "doc_ids": [
+          "internal-life-adjuster-guidelines"
+        ],
+        "match": [
+          "2 claims"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-life-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g152",
+    "type": "internal",
+    "question": "After how many claims in 12 months is a health policyholder referred to SIU?",
+    "expected_answer": "Siu referral trigger: 3 claims.",
+    "must_contain": [
+      [
+        "3 claims"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.health.siu_count",
+        "doc_ids": [
+          "internal-health-adjuster-guidelines"
+        ],
+        "match": [
+          "3 claims"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-health-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g153",
+    "type": "internal",
+    "question": "After how many claims in 12 months is a travel policyholder referred to SIU?",
+    "expected_answer": "Siu referral trigger: 6 claims.",
+    "must_contain": [
+      [
+        "6 claims"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.travel.siu_count",
+        "doc_ids": [
+          "internal-travel-adjuster-guidelines"
+        ],
+        "match": [
+          "6 claims"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-travel-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g154",
+    "type": "internal",
+    "question": "After how many claims in 12 months is a auto policyholder referred to SIU?",
+    "expected_answer": "Siu referral trigger: 5 claims.",
+    "must_contain": [
+      [
+        "5 claims"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.auto.siu_count",
+        "doc_ids": [
+          "internal-auto-adjuster-guidelines"
+        ],
+        "match": [
+          "5 claims"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-auto-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g155",
+    "type": "internal",
+    "question": "What is the large-loss referral threshold for auto claims?",
+    "expected_answer": "Large-loss referral threshold: $50,000.",
+    "must_contain": [
+      [
+        "$50000",
+        "50000 dollars",
+        "usd 50000"
+      ]
+    ],
+    "facts": [
+      {
+        "fact_id": "internal.auto.large_loss",
+        "doc_ids": [
+          "internal-auto-adjuster-guidelines"
+        ],
+        "match": [
+          "$50000",
+          "50000 dollars",
+          "usd 50000"
+        ]
+      }
+    ],
+    "relevant_doc_ids": [
+      "internal-auto-adjuster-guidelines"
+    ],
+    "answerable": true,
+    "allowed_confidentiality": [
+      "public",
+      "internal"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g156",
+    "type": "unanswerable",
+    "question": "What is the annual deductible for the Diamond PPO plan?",
+    "expected_answer": "Not in the documents: no such product exists.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g157",
+    "type": "unanswerable",
+    "question": "What is the annual deductible for the Bronze PPO plan?",
+    "expected_answer": "Not in the documents: no such product exists.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g158",
+    "type": "unanswerable",
+    "question": "What is the collision deductible on Titanium Auto?",
+    "expected_answer": "Not in the documents: no such product exists.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g159",
+    "type": "unanswerable",
+    "question": "What is the comprehensive deductible on Motorcycle Plus?",
+    "expected_answer": "Not in the documents: no such product exists.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g160",
+    "type": "unanswerable",
+    "question": "How long does HomeElite pay additional living expenses?",
+    "expected_answer": "Not in the documents: no such product exists.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g161",
+    "type": "unanswerable",
+    "question": "When do I have to buy the cancel-for-any-reason upgrade for Trip Ultra?",
+    "expected_answer": "Not in the documents: no such product exists.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g162",
+    "type": "unanswerable",
+    "question": "What is the maximum enrollment age for Pet Platinum?",
+    "expected_answer": "Not in the documents: no such product exists.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g163",
+    "type": "unanswerable",
+    "question": "What is the free-look period for Term 40?",
+    "expected_answer": "Not in the documents: no such product exists.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g164",
+    "type": "unanswerable",
+    "question": "What is the adult dental cleaning copay for Platinum PPO?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g165",
+    "type": "unanswerable",
+    "question": "What is the adult dental cleaning copay for Catastrophic EPO?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "health",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g166",
+    "type": "unanswerable",
+    "question": "What is the gap insurance payout limit on Standard Auto?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g167",
+    "type": "unanswerable",
+    "question": "What is the gap insurance payout limit on Premier Auto?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "auto",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g168",
+    "type": "unanswerable",
+    "question": "What is the identity theft restoration limit on Condo Shield?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g169",
+    "type": "unanswerable",
+    "question": "What is the rental car collision limit on Trip Premier?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "travel",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g170",
+    "type": "unanswerable",
+    "question": "What is the dental illness sublimit on Pet Wellness?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g171",
+    "type": "unanswerable",
+    "question": "What percentage of the death benefit can be accelerated on Whole Life?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g172",
+    "type": "unanswerable",
+    "question": "After how many claims in 12 months is a pet policyholder referred to SIU?",
+    "expected_answer": "Not available to public users (internal document).",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "pet",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g173",
+    "type": "unanswerable",
+    "question": "What is the large-loss referral threshold for home claims?",
+    "expected_answer": "Not available to public users (internal document).",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g174",
+    "type": "unanswerable",
+    "question": "After how many claims in 12 months is a life policyholder referred to SIU?",
+    "expected_answer": "Not available to public users (internal document).",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "life",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g175",
+    "type": "unanswerable",
+    "question": "After how many claims in 12 months is a home policyholder referred to SIU?",
+    "expected_answer": "Not available to public users (internal document).",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": "home",
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g176",
+    "type": "unanswerable",
+    "question": "Does Velmora accept cryptocurrency for premium payments?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g177",
+    "type": "unanswerable",
+    "question": "What is Velmora's stock ticker symbol?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g178",
+    "type": "unanswerable",
+    "question": "Who is the CEO of Velmora Assurance?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g179",
+    "type": "unanswerable",
+    "question": "Does Velmora offer a rewards credit card?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  },
+  {
+    "id": "g180",
+    "type": "unanswerable",
+    "question": "What is the mailing address of Velmora's headquarters?",
+    "expected_answer": "Not stated in the documents.",
+    "must_contain": [],
+    "facts": [],
+    "relevant_doc_ids": [],
+    "answerable": false,
+    "allowed_confidentiality": [
+      "public"
+    ],
+    "line": null,
+    "expected_format": "PolicyAnswer.v1"
+  }
+]
