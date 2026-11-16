@@ -1,0 +1,35 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    # Offline tests: fake embedder/reranker/LLM, no GPU, no model downloads.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv venv --python 3.12
+      - run: uv pip install --index-url https://download.pytorch.org/whl/cpu "torch>=2.7"
+      - run: uv pip install -r requirements.txt pytest && uv pip install --no-deps -e .
+      - run: uv run --no-sync pytest
+
+  eval-gate:
+    # Quality regression gate against reports/baseline.json. Needs a GPU runner with Ollama
+    # and the qwen2.5 models pulled; exits non-zero (blocking the merge) if any check fails.
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'pull_request'
+    needs: tests
+    runs-on: [self-hosted, gpu]
+    steps:
+      - uses: actions/checkout@v4
+      - run: uv sync --python 3.12
+      - run: uv run python -m policyrag.ingestion.embed_and_index
+      - run: uv run python -m policyrag.evaluation.evaluate --name ci --gate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-report
+          path: reports/eval_ci.*
