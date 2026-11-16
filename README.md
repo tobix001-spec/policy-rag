@@ -29,22 +29,61 @@ against v0 and promoted.
 | latency p50 / p95 | 2.72 s / 3.38 s | 2.74 s / 3.48 s |
 | est. API-equivalent cost per 1k queries | $0.158 | $0.170 |
 
+Accuracy by question type:
+
+| type | n | v0 | v1 |
+|---|---|---|---|
+| simple | 105 | 85.7% | 85.7% |
+| amendment | 15 | 33.3% | **100%** |
+| comparison | 25 | 60.0% | **80.0%** |
+| internal (staff scope) | 10 | 100% | 100% |
+| unanswerable | 25 | 100% | 100% |
+
 Full reports: [`reports/eval_v0-baseline.md`](reports/eval_v0-baseline.md) and
 [`reports/eval_v1.md`](reports/eval_v1.md), including every incorrect case.
 
-**Ablations** (90-case subset, each gated against v1; full table in
-[`reports/ablations.md`](reports/ablations.md)):
+### Ablations
 
-* **Removing the cross-encoder reranker** drops accuracy to 79.8% and fails 10 gate checks. This is the
-  most valuable component.
-* **Removing query decomposition** fails the gate on accuracy and context recall.
-* **Removing BM25 (dense only)** costs about 1 point and passes. On this corpus, hybrid search adds
-  little once reranking is in place.
-* **k = 2 context chunks** scores *higher* accuracy (89.9%) but fails the gate: the share of wrong
-  answers caught by review fell too far. Slightly more accurate but less self-aware is a worse
-  production trade.
-* **Removing amendment expansion** shows no difference on this subset; its effect is concentrated in
-  the 15 amendment cases.
+Each variant runs on a 90-case stratified subset, without the judge, gated against v1. Full table:
+[`reports/ablations.md`](reports/ablations.md).
+
+| variant | accuracy | amendment acc. | comparison acc. | p50 latency | cost / 1k | gate |
+|---|---|---|---|---|---|---|
+| **full (v1)** | 87.6% | 100% | 58.3% | 2.68 s | $0.173 | ✅ |
+| no reranker | 79.8% | 50.0% | 41.7% | 2.62 s | $0.160 | ❌ 10 checks |
+| dense only (no BM25) | 86.5% | 100% | 58.3% | 2.72 s | $0.175 | ✅ |
+| k = 2 chunks | 89.9% | 87.5% | 58.3% | 2.60 s | $0.128 | ❌ review recall |
+| no query decomposition | 85.4% | 100% | 41.7% | 2.73 s | $0.170 | ❌ accuracy, recall |
+| no amendment expansion | 87.6% | 100% | 58.3% | 2.76 s | $0.163 | ✅ |
+| no grounding verifier | 86.5% | 100% | 58.3% | 2.72 s | $0.173 | ❌ review metrics |
+| everything → 3b model | 82.0% | 37.5% | 66.7% | 2.65 s | $0.151 | ❌ 6 checks |
+| everything → 7b model | 89.9% | 100% | 58.3% | 3.03 s | $0.220 | ❌ cost, review recall |
+
+What the ablations show:
+
+* **The cross-encoder reranker carries the most weight.** Without it, accuracy falls 7.8 points and
+  amendment accuracy halves.
+* **Query decomposition is what fixes comparisons.** Without it, comparison accuracy drops from 58% to
+  42% and context recall falls.
+* **The grounding verifier is a safety feature, not an accuracy feature.** Accuracy barely moves, but
+  the share of wrong answers caught by review collapses from 55% to 17%.
+* **Routing is a real trade-off.** Sending everything to the 7b model gains 2.3 points for +27% cost
+  and +13% latency. Sending everything to the 3b model loses 5.6 points, and amendment accuracy falls
+  to 37.5%. That is why amendment queries are upgraded after retrieval.
+* **BM25 and amendment expansion showed no measurable benefit here.** Retrieval already surfaces the
+  amendments directly. Both are kept as cheap safety nets, and the claim is that they cost nothing,
+  not that they help.
+* **k = 2 looks better on accuracy but fails the gate**, because review catches fewer errors.
+  Caveat: on a 90-case subset, review recall rests on about 11 wrong answers, so a 2–3 case swing moves
+  it 20 points. Treat that particular check as noisy at this sample size.
+
+### Known weak spots
+
+* **Comparisons are the weakest category** (80% on the full set). The remaining failures mostly
+  involve products with amendments (old and new values both in context) or the model claiming a value
+  is "not specified" when it was retrieved.
+* **15 simple-lookup errors remain.** These are mostly the small model picking a neighbouring number
+  from a chunk that states several facts.
 
 > 📘 New to the project? Read [`docs/PROJECT_GUIDE.md`](docs/PROJECT_GUIDE.md): every component
 > explained, the metrics, the AWS production plan, known limitations, and interview Q&A.
