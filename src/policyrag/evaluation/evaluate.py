@@ -296,7 +296,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.limit:
         cases = stratified_sample(cases, args.limit)
 
-    svc.answer("warm-up: what is the late payment fee?", use_cache=False)  # load models; not scored
+    svc.answer("warm-up: what is the late payment fee?", use_cache=False, enqueue_review=False)  # not scored
 
     rows = []
     t0 = time.perf_counter()

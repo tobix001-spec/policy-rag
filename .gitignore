@@ -9,3 +9,4 @@ reports/_eval_state/
 .env
 .vscode/
 reports/eval_smoke.*
+data/*.sqlite*

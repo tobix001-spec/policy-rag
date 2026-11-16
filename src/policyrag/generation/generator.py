@@ -75,6 +75,27 @@ def _numbers(text: str) -> set[str]:
     return out
 
 
+# Product-like names in a question: 2+ capitalised/number tokens ("Bronze PPO", "Term 40", "Trip Ultra")
+# or one CamelCase word ("HomeElite"). Function words at the edges are trimmed ("If I", "What").
+_ENTITY = re.compile(r"\b[A-Z][\w-]*(?:\s+(?:[A-Z][\w-]*|\d+))+\b|\b[A-Z][a-z]+[A-Z]\w*\b")
+_EDGE_WORDS = frozenset("if i what which how when where who does do is are can my the a an for between compare "
+                        "within after up velmora assurance".split())
+
+
+def question_entities(question: str) -> list[str]:
+    out = []
+    for m in _ENTITY.finditer(question):
+        toks = m.group(0).split()
+        while toks and toks[0].lower() in _EDGE_WORDS:
+            toks.pop(0)
+        while toks and toks[-1].lower() in _EDGE_WORDS:
+            toks.pop()
+        phrase = " ".join(toks)
+        if len(toks) >= 2 or (len(toks) == 1 and re.fullmatch(r"[A-Z][a-z]+[A-Z]\w*", phrase)):
+            out.append(phrase)
+    return out
+
+
 def grounding_issues(question: str, answer: str, cited_texts: list[str], products: list[str]) -> list[str]:
     """Deterministic verifier. LLM self-reported confidence is poorly calibrated (wrong answers
     routinely claim 0.9+), so we check the two things that matter most in this domain:
@@ -89,6 +110,10 @@ def grounding_issues(question: str, answer: str, cited_texts: list[str], product
     low = cited.lower()
     if any(p.lower() not in low for p in products):
         issues.append("product_not_in_sources")
+    # Unknown names: "Bronze PPO" isn't in the catalog, so the product check above can't see it. Found while
+    # recording the demo: the 3b model answered "Bronze PPO" with the Gold PPO deductible and was released.
+    if any(e.lower() not in low for e in question_entities(question)):
+        issues.append("entity_not_in_sources")
     return issues
 
 
@@ -147,7 +172,9 @@ class AnswerService:
 
     # ------------------------------------------------------------------ main entry point
     def answer(self, question: str, filters: Filters | None = None, use_cache: bool = True,
-               force_route: str | None = None, retrieval_overrides: dict | None = None) -> dict:
+               force_route: str | None = None, retrieval_overrides: dict | None = None,
+               enqueue_review: bool = True) -> dict:
+        """enqueue_review=False for internal calls (startup warm-up) that must not land in the human queue."""
         t_start = time.perf_counter()
         rid = uuid.uuid4().hex[:12]
         flt = filters or Filters()
@@ -301,7 +328,7 @@ class AnswerService:
                         "line": flt.line},
             "raw_output": raw,
         }
-        if status == "needs_review":
+        if status == "needs_review" and enqueue_review:
             public = {k: v for k, v in out.items() if k not in ("retrieved", "raw_output")}
             out["review_id"] = self.review.enqueue(question, public, conf, reasons)
             M.REVIEW_OPEN.set(self.review.counts().get("open", 0))

@@ -8,33 +8,39 @@ gates every change, structured JSON outputs, cost/latency accounting and a human
 > fact registry. That is deliberate. Every golden-set question has a known answer **and** a known set
 > of source documents, so retrieval and answer metrics are exact rather than judged.
 
+![PolicyRAG demo](docs/demo/demo.gif)
+
+*Real screenshots of the running system (local GPU, real models), recorded by
+[`scripts/record_demo.py`](scripts/record_demo.py): a cited answer, a two-product comparison, a
+non-existent product held for review, customer vs staff access to internal documents, a semantic-cache
+hit, the review queue, and the eval gate. Full-size frames are in [`docs/demo/`](docs/demo/).*
 
 ## Results (measured, 180-case golden set, RTX 5070, qwen2.5 7b/3b)
 
 Every version was built by reading the previous version's failures and fixing the cause. Each one was
 then gated against its predecessor.
 
-| metric | v0 | v1 | v2 | v3 | **v4 (current)** |
-|---|---|---|---|---|---|
-| answer accuracy | 78.3% | 86.1% | 93.3% | 94.4% | **93.9%** |
-| accuracy of answers released without review | 77.0% | 89.2% | 94.9% | 97.1% | **96.3%** |
-| wrong answers caught by the review gate | 12.8% | 44.0% | 41.7% | 60.0% | **54.5%** |
-| faithfulness / answer relevancy (LLM judge) | 0.80 / 0.84 | 0.82 / 0.85 | 0.88 / 0.92 | 0.87 / 0.93 | **0.86 / 0.93** |
-| retrieval hit rate / context recall | 99.4% / 97.4% | 100% / 99.0% | 100% / 99.7% | 100% / 99.7% | **100% / 99.7%** |
-| hallucination rate (25 unanswerable) | 0% | 0% | 0% | 0% | **0%** |
-| valid JSON | 100% | 100% | 100% | 99.4% | **100%** |
-| internal-document leaks | 0 | 0 | 0 | 0 | **0** |
-| latency p50 / p95 | 2.72 / 3.38 s | 2.74 / 3.48 s | 2.80 / 3.69 s | 2.76 / 3.68 s | **2.69 / 3.69 s** |
-| est. cost per 1k queries | $0.158 | $0.170 | $0.182 | $0.364 ❌ | **$0.185** |
-| gate | – | ✅ vs v0 | ✅ vs v1 | ❌ cost | ✅ vs v2 |
+| metric | v0 | v1 | v2 | v3 | v4 | **v5 (current)** |
+|---|---|---|---|---|---|---|
+| answer accuracy | 78.3% | 86.1% | 93.3% | 94.4% | 93.9% | **93.9%** |
+| accuracy of answers released without review | 77.0% | 89.2% | 94.9% | 97.1% | 96.3% | **97.0%** |
+| wrong answers caught by the review gate | 12.8% | 44.0% | 41.7% | 60.0% | 54.5% | **63.6%** |
+| faithfulness / answer relevancy (LLM judge) | 0.80 / 0.84 | 0.82 / 0.85 | 0.88 / 0.92 | 0.87 / 0.93 | 0.86 / 0.93 | **0.86 / 0.93** |
+| retrieval hit rate / context recall | 99.4% / 97.4% | 100% / 99.0% | 100% / 99.7% | 100% / 99.7% | 100% / 99.7% | **100% / 99.7%** |
+| hallucination rate (25 unanswerable) | 0% | 0% | 0% | 0% | 0% | **0%** |
+| valid JSON | 100% | 100% | 100% | 99.4% | 100% | **100%** |
+| internal-document leaks | 0 | 0 | 0 | 0 | 0 | **0** |
+| latency p50 / p95 | 2.72 / 3.38 s | 2.74 / 3.48 s | 2.80 / 3.69 s | 2.76 / 3.68 s | 2.69 / 3.69 s | **2.77 / 3.80 s** |
+| est. cost per 1k queries | $0.158 | $0.170 | $0.182 | $0.364 ❌ | $0.185 | **$0.185** |
+| gate | – | ✅ vs v0 | ✅ vs v1 | ❌ cost | ✅ vs v2 | ✅ vs v4 |
 
-| question type (n) | v0 | v1 | v2 | v3 | **v4** |
-|---|---|---|---|---|---|
-| simple (105) | 85.7% | 85.7% | 95.2% | 94.3% | **94.3%** |
-| amendment (15) | 33.3% | 100% | 86.7% | 100% | **100%** |
-| comparison (25) | 44.0% | 60.0% | 84.0% | 88.0% | **88.0%** |
-| internal, staff scope (10) | 100% | 100% | 90% | 90% | **80%** |
-| unanswerable (25) | 100% | 100% | 100% | 100% | **100%** |
+| question type (n) | v0 | v1 | v2 | v3 | v4 | **v5** |
+|---|---|---|---|---|---|---|
+| simple (105) | 85.7% | 85.7% | 95.2% | 94.3% | 94.3% | **93.3%** |
+| amendment (15) | 33.3% | 100% | 86.7% | 100% | 100% | **100%** |
+| comparison (25) | 44.0% | 60.0% | 84.0% | 88.0% | 88.0% | **88.0%** |
+| internal, staff scope (10) | 100% | 100% | 90% | 90% | 80% | **90%** |
+| unanswerable (25) | 100% | 100% | 100% | 100% | 100% | **100%** |
 
 What changed and why:
 
@@ -48,6 +54,8 @@ What changed and why:
 | v2 | 4 chunks per product in decomposed retrieval (was 3) | comparisons missed the exact section needed |
 | v3 | **removed** "amendments first" context ordering (added in v2) | a 15-case probe: 86.7% with it, 100% without |
 | v4 | 512-token output cap + escalate invalid 3b output to 7b | **v3's gate caught a runaway generation**: one answer looped for 16 min and doubled the run's cost |
+| v5 | verifier also checks **unknown product-like names** in the question ("Bronze PPO") against the cited sources | **found while recording the demo, not by the eval**: "Bronze PPO" (it doesn't exist) was answered with the Gold PPO deductible and released. The golden set's Bronze PPO question asked about another attribute and abstained, so 0% hallucination on 25 questions had hidden it. v5: no accuracy change, no new false positives on the 180 cases |
+| v5 | startup warm-up no longer enqueues a human-review item | every API restart was adding a junk item to the review queue |
 
 **Grader corrections.** Two grader bugs were found and fixed during this work. All reports were
 re-scored from their stored answers with the final grader ([`evaluation/rescore.py`](src/policyrag/evaluation/rescore.py)),
@@ -98,10 +106,12 @@ aren't like-for-like: read the deltas.
 * **Comparisons (88%)**. The remaining failures: an answer that uses a pre-amendment value; one that
   claims a value is "not specified" when it was retrieved; and one that contradicts itself ("Term 30
   has the faster … so Term 30 has the slower …").
-* **Simple lookups (6 errors)**. Mostly appeal deadlines where the 3b model takes the *claim filing*
+* **Simple lookups (7 errors)**. Mostly appeal deadlines where the 3b model takes the *claim filing*
   deadline from the same product's guide.
-* **Internal questions (80%)**. The 3b model abstains on both "SIU referral" questions (2 of 10, a small
-  sample but a consistent pattern).
+* **Internal questions (90%)**. The 3b model tends to abstain on "SIU referral" questions (1–2 of 10
+  across runs).
+* **The golden set has blind spots.** The demo found a hallucination ("Bronze PPO") that 180 cases
+  missed. Unanswerable coverage (25 cases) should grow with more phrasings of non-existent products.
 * **Data issues found by the eval, documented rather than silently fixed:** one generated amendment sets
   a pet reimbursement rate to an impossible **120%**, because amended values weren't capped. One amendment
   applies only to policies "issued or renewed on or after" its date, which makes the question

@@ -1,5 +1,5 @@
 {
-  "from": "eval_v4.json",
+  "from": "eval_v5.json",
   "summary": {
     "n": 180,
     "answer_accuracy": 0.9389,
@@ -18,11 +18,11 @@
       },
       "internal": {
         "n": 10,
-        "accuracy": 0.8
+        "accuracy": 0.9
       },
       "simple": {
         "n": 105,
-        "accuracy": 0.9429
+        "accuracy": 0.9333
       },
       "unanswerable": {
         "n": 25,
@@ -35,7 +35,7 @@
       "mrr": 0.9516,
       "context_precision": 0.9478
     },
-    "faithfulness": 0.8648,
+    "faithfulness": 0.8582,
     "answer_relevancy": 0.9255,
     "format": {
       "valid_rate": 1.0,
@@ -44,37 +44,37 @@
       "repaired_rate": 0.0
     },
     "citations": {
-      "valid_rate": 1.0,
+      "valid_rate": 0.9944,
       "relevant_rate": 0.9145
     },
     "review": {
-      "flagged_rate": 0.2444,
-      "auto_answer_accuracy": 0.9632,
-      "error_recall": 0.5455
+      "flagged_rate": 0.2611,
+      "auto_answer_accuracy": 0.9699,
+      "error_recall": 0.6364
     },
     "routing": {
       "complex": {
         "share": 0.2333,
         "accuracy": 0.9286,
-        "latency_ms_p50": 3520.4,
+        "latency_ms_p50": 3637.4,
         "cost_usd_mean": 0.0003
       },
       "simple": {
         "share": 0.7667,
         "accuracy": 0.942,
-        "latency_ms_p50": 2657.4,
+        "latency_ms_p50": 2722.3,
         "cost_usd_mean": 0.0002
       }
     },
     "fallback_rate": 0.0,
-    "latency_ms_p50": 2694.9,
-    "latency_ms_p95": 3694.4,
-    "llm_ms_p50": 2609.6,
-    "retrieval_ms_p50": 82.3,
+    "latency_ms_p50": 2766.6,
+    "latency_ms_p95": 3799.1,
+    "llm_ms_p50": 2661.9,
+    "retrieval_ms_p50": 97.2,
     "tokens_in_mean": 1212.5,
-    "tokens_out_mean": 100.0,
-    "cost_per_query_usd": 0.00018504,
-    "cost_per_1k_queries_usd": 0.185,
+    "tokens_out_mean": 100.4,
+    "cost_per_query_usd": 0.00018522,
+    "cost_per_1k_queries_usd": 0.1852,
     "internal_leaks": 0
   }
 }

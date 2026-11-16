@@ -1,4 +1,4 @@
-﻿"""PolicyRAG demo UI.   streamlit run ui/app.py"""
+"""PolicyRAG demo UI.   streamlit run ui/app.py"""
 from __future__ import annotations
 
 import json
@@ -35,14 +35,14 @@ def api(method: str, path: str, **kw):
 
 with st.sidebar:
     st.title("PolicyRAG")
-    st.caption("Velmora Assurance policy Â· claims Â· support assistant")
+    st.caption("Velmora Assurance policy · claims · support assistant")
     role = st.radio("Role", ["customer", "staff"], help="staff can retrieve INTERNAL adjuster documents")
     line = st.selectbox("Line of business", ["(any)", "health", "auto", "home", "travel", "pet", "life"])
     doc_types = st.multiselect("Document types", ["policy", "claims", "support"])
     use_cache = st.checkbox("Use semantic cache", value=True)
     health = api("GET", "/health")
     if health:
-        st.success(f"API {health['status']} Â· {health['index']['n_chunks']} chunks / {health['index']['n_docs']} docs")
+        st.success(f"API {health['status']} · {health['index']['n_chunks']} chunks / {health['index']['n_docs']} docs")
 
 tab_ask, tab_review, tab_eval, tab_mon = st.tabs(["Ask", "Review queue", "Evaluation", "Monitoring"])
 
@@ -52,34 +52,39 @@ with tab_ask:
     if st.button("Ask", type="primary", disabled=len(question) < 3):
         body = {"question": question, "use_cache": use_cache, "include_retrieved": True,
                 "line": None if line == "(any)" else line, "doc_types": doc_types or None}
-        with st.spinner("Retrieving and generatingâ€¦"):
+        with st.spinner("Retrieving and generating…"):
             res = api("POST", "/query", json=body, headers={"X-Role": role})
         if res:
             if res["status"] == "answered":
                 st.success("Answered")
+                st.markdown(f"### {res['answer']}")
             else:
-                st.warning(f"Sent to human review (#{res['review_id']}): {', '.join(res['review_reasons'])}")
-            st.markdown(f"### {res['answer']}")
+                st.warning(f"Held for human review (#{res['review_id']}): {', '.join(res['review_reasons'])}. "
+                           "In production this draft is not shown to customers.")
+                st.markdown(f"### ~~{res['answer']}~~" if res["answerable"] else f"### {res['answer']}")
+                if res["answerable"]:
+                    st.caption("Draft answer withheld: it failed verification.")
             st.caption(res["reasoning"])
 
             c = st.columns(6)
             c[0].metric("Confidence", f"{res['confidence']['final']:.2f}",
-                        help=f"retrieval {res['confidence']['retrieval']:.2f} Â· llm {res['confidence']['llm']:.2f}")
+                        help=f"retrieval {res['confidence']['retrieval']:.2f} · llm {res['confidence']['llm']:.2f}")
             c[1].metric("Route", res["route"]["name"], help=", ".join(res["route"]["reasons"]))
-            c[2].metric("Model", res["route"]["model"])
+            model = res["route"]["model"].split(":")[-1]  # "qwen2.5:7b" -> "7b"
+            c[2].metric("Model", model + (" ↑" if res["route"].get("escalated") else ""), help=res["route"]["model"])
             c[3].metric("Latency", f"{res['latency_ms']['total']:.0f} ms")
             c[4].metric("Tokens", f"{res['usage']['input_tokens']}+{res['usage']['output_tokens']}")
-            c[5].metric("Est. cost", f"${res['usage']['cost_usd_estimate']:.6f}",
-                        help="API-equivalent estimate; local inference has no per-token bill")
+            c[5].metric("Est. $ / 1k q", f"${res['usage']['cost_usd_estimate'] * 1000:.2f}",
+                        help="API-equivalent estimate scaled to 1,000 such queries; local inference has no per-token bill")
             if res["cache"].get("hit"):
                 st.info(f"Semantic cache hit (similarity {res['cache']['similarity']}) for: "
-                        f"â€œ{res['cache']['original_question']}â€")
+                        f"“{res['cache']['original_question']}”")
 
             st.subheader("Sources")
             for s in res["sources"]:
-                with st.expander(f"{s['title']} â€” {s['section']}  Â·  `{s['chunk_id']}`"):
+                with st.expander(f"{s['title']} — {s['section']}  ·  `{s['chunk_id']}`"):
                     st.write(s["snippet"])
-                    st.caption(f"updated {s['last_updated']} Â· rerank {s['rerank_score']}")
+                    st.caption(f"updated {s['last_updated']} · rerank {s['rerank_score']}")
             if res.get("retrieved"):
                 st.subheader("Retrieved context")
                 st.dataframe(pd.DataFrame([{"chunk_id": h["chunk_id"], "type": h["doc_type"],
@@ -94,7 +99,7 @@ with tab_review:
     items = api("GET", "/review") or []
     st.write(f"{len(items)} open item(s)")
     for it in items:
-        with st.expander(f"#{it['id']} Â· {it['question']} Â· conf {it['confidence']:.2f} Â· {', '.join(it['reasons'])}"):
+        with st.expander(f"#{it['id']} · {it['question']} · conf {it['confidence']:.2f} · {', '.join(it['reasons'])}"):
             st.write("**Model answer:**", it["response"]["answer"])
             st.json({"sources": [s["chunk_id"] for s in it["response"].get("sources", [])],
                      "route": it["response"].get("route")})

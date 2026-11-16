@@ -40,7 +40,7 @@ async def lifespan(app: FastAPI):
     _state["service"] = svc
     if get_settings().provider != "fake":
         try:  # pay the CUDA/model cold start (~10-80s) at boot, not on the first user
-            svc.answer("What is the late payment fee?", use_cache=False)
+            svc.answer("What is the late payment fee?", use_cache=False, enqueue_review=False)
             log.info("warm-up complete")
         except Exception as e:  # noqa: BLE001
             log.warning("warm-up failed: %s", e)

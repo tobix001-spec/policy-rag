@@ -35,6 +35,23 @@ def test_grounding_verifier():
     assert grounding_issues("claims in 12 months?", "30 days within 12 months", ctx, []) == []
 
 
+def test_entity_check_catches_nonexistent_products():
+    from policyrag.generation.generator import grounding_issues, question_entities
+
+    # the demo hallucination: "Bronze PPO" does not exist, only "Bronze HMO" and "Gold PPO" were cited
+    cited = ["Velmora Assurance Gold PPO Health Plan\nGold PPO carries a $750 deductible.",
+             "Velmora Assurance Bronze HMO Health Plan\nBronze HMO carries a $1,000 deductible."]
+    assert "entity_not_in_sources" in grounding_issues(
+        "What is the deductible for the Bronze PPO plan?", "Both are $750.", cited, [])
+    assert question_entities("What is the deductible for the Bronze PPO plan?") == ["Bronze PPO"]
+    assert question_entities("What is the out-of-pocket maximum for HomeElite?") == ["HomeElite"]
+    assert question_entities("How much will Term 40 pay?") == ["Term 40"]
+    # no false alarms on ordinary capitalisation or real, cited products
+    assert question_entities("If I crash my car, what deductible applies?") == []
+    assert question_entities("Within how many days will Velmora Assurance decide a claim?") == []
+    assert grounding_issues("What is the deductible for the Gold PPO plan?", "$750", cited, ["Gold PPO"]) == []
+
+
 def test_multi_entity_decomposition_covers_both_products(retriever):
     q = "Which has the higher annual benefit limit: Senior Pet or Pet Wellness?"
     assert retriever.products_in(q) == ["Senior Pet", "Pet Wellness"]
@@ -91,6 +108,20 @@ def test_invalid_small_model_output_escalates_to_default_model(service, monkeypa
         service.s.max_json_repairs = 1
     assert calls == [service.s.llm_small, service.s.llm_default]
     assert out["route"]["escalated"] and out["format"]["valid"] and "invalid_output" not in out["review_reasons"]
+
+
+def test_warmup_calls_do_not_enqueue_for_review(service, monkeypatch):
+    from langchain_core.messages import AIMessage
+
+    monkeypatch.setattr(service, "_invoke", lambda *a, **k: (AIMessage(content="not json"), "fake-llm", False))
+    service.s.max_json_repairs = 0
+    try:
+        before = service.review.counts().get("open", 0)
+        out = service.answer("warm-up question", use_cache=False, enqueue_review=False)
+    finally:
+        service.s.max_json_repairs = 1
+    assert out["status"] == "needs_review" and out["review_id"] is None
+    assert service.review.counts().get("open", 0) == before
 
 
 def test_llm_outage_degrades_gracefully(service, monkeypatch):

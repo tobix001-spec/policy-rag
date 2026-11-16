@@ -27,6 +27,10 @@ redis = ["redis>=5.0"]
 ui = ["streamlit>=1.38", "pandas>=2.2"]
 
 [dependency-groups]
+demo = [
+    "pillow>=13.0.0",
+    "playwright>=1.65.2",
+]
 dev = ["pytest>=8.0"]
 
 [build-system]
